@@ -115,7 +115,6 @@ char		**ft_strsplitsplit(const char *s1, const char *s2);
 char		*ft_strinsert(const char *s1, const char *s2, size_t n);
 char		*ft_strcut(const char *s, size_t start, size_t n);
 t_list		*ft_lstlast(const t_list *lst);
-unsigned	ft_bswap_32(unsigned x);
 t_img		*ft_image_create(void *mlx_ptr, int width, int height);
 void		ft_image_pixel_put(t_img *img, int x, int y, unsigned color_value);
 unsigned	ft_image_pixel_get(const t_img *img, int x, int y);
@@ -145,5 +144,6 @@ void		ft_kthxbye(const char *s);
 int			ft_printf(const char *format, ...);
 int			ft_dprintf(int fd, const char *format, ...);
 int			ft_vdprintf(int fd, const char *format, va_list ap);
+uint32_t	ft_bswap_32(uint32_t x);
 
 #endif

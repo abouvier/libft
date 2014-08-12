@@ -12,13 +12,8 @@
 
 #include "libft.h"
 
-unsigned	ft_bswap_32(unsigned x)
+uint32_t	ft_bswap_32(uint32_t x)
 {
-	unsigned	v;
-
-	v = x << 24;
-	v |= (x & 0xff00) << 8;
-	v |= (x >> 8) & 0xff00;
-	v |= x >> 24;
-	return (v);
+	return (((x & 0xff000000) >> 24) | ((x & 0x00ff0000) >> 8)
+		| ((x & 0x0000ff00) << 8) | ((x & 0x000000ff) << 24));
 }
