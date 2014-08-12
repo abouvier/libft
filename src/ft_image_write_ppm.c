@@ -20,22 +20,24 @@ void	ft_image_write_ppm(const char *filename, const t_img *img)
 {
 	int		i;
 	int		fd;
+	int		size;
 	char	*data;
 
-	if ((data = (char *)ft_memalloc(3 * img->width * img->height))
-		&& (fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1)
+	size = img->width * img->height;
+	if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1
+		&& (data = (char *)ft_memalloc(3 * size)))
 	{
 		i = 0;
 		ft_dprintf(fd, "P6\n%d %d\n255\n", img->width, img->height);
-		while (i < img->width * img->height)
+		while (i < size)
 		{
 			data[i * 3] = img->data_addr[i * 4 + 2];
 			data[i * 3 + 1] = img->data_addr[i * 4 + 1];
 			data[i * 3 + 2] = img->data_addr[i * 4];
 			i++;
 		}
-		i = write(fd, data, 3 * img->width * img->height);
-		close(fd);
+		i = write(fd, data, 3 * size);
+		ft_strdel(&data);
 	}
-	ft_strdel(&data);
+	close(fd);
 }
