@@ -26,11 +26,7 @@ void	ft_image_write_ppm(const char *filename, const t_img *img)
 		&& (fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1)
 	{
 		i = 0;
-		ft_putendl_fd("P6", fd);
-		ft_putnbr_fd(img->width, fd);
-		ft_putchar_fd(' ', fd);
-		ft_putnbr_fd(img->height, fd);
-		ft_putendl_fd("\n255", fd);
+		ft_dprintf(fd, "P6\n%d %d\n255\n", img->width, img->height);
 		while (i < img->width * img->height)
 		{
 			data[i * 3] = img->data_addr[i * 4 + 2];

@@ -139,7 +139,7 @@ SRCS = \
 	ft_vdprintf.c \
 	ft_printf.c \
 	ft_kthxbye.c
-INCS := libft.h libft_cdefs.h libft_types.h get_next_line.h printf.h
+INCS := libft.h libft_cdefs.h libft_types.h get_next_line.h
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 CPPFLAGS := $(addprefix -I,include)
 VPATH := include src

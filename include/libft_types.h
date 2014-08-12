@@ -13,6 +13,7 @@
 #ifndef LIBFT_TYPES_H
 # define LIBFT_TYPES_H
 
+# include <stdarg.h>
 # include <stddef.h>
 
 typedef int			(*t_cmp)();
@@ -43,5 +44,11 @@ typedef struct		s_img
 	char			*data_addr;
 	int				bytes_per_pixel;
 }					t_img;
+
+typedef struct		s_print
+{
+	char			format;
+	int				(*print)(int, va_list *);
+}					t_print;
 
 #endif

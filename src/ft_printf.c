@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 #include <unistd.h>
 
 int	ft_printf(const char *format, ...)
@@ -19,7 +19,7 @@ int	ft_printf(const char *format, ...)
 	int		len;
 
 	va_start(ap, format);
-	len = ft_vdprintf(STDOUT_FILENO, format, &ap);
+	len = ft_vdprintf(STDOUT_FILENO, format, ap);
 	va_end(ap);
 	return (len);
 }

@@ -15,7 +15,6 @@
 
 # include "libft_cdefs.h"
 # include "libft_types.h"
-# include <stdarg.h>
 # include <netdb.h>
 
 extern char	**g_environ;
@@ -143,5 +142,8 @@ int			ft_socksrv(const struct addrinfo *ai, int backlog);
 int			ft_sockcli(const struct addrinfo *ai);
 void		ft_freeaddrinfo(struct addrinfo *ai);
 void		ft_kthxbye(const char *s);
+int			ft_printf(const char *format, ...);
+int			ft_dprintf(int fd, const char *format, ...);
+int			ft_vdprintf(int fd, const char *format, va_list ap);
 
 #endif

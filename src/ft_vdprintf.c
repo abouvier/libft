@@ -10,19 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "libft.h"
 #include <unistd.h>
 
-t_print		g_print[] =
-{
-	{'d', &print_int},
-	{'i', &print_int},
-	{'c', &print_char},
-	{'s', &print_string},
-	{0, NULL}
-};
-
-int			print_char(int fd, va_list *ap)
+static int	print_char(int fd, va_list *ap)
 {
 	char	c;
 
@@ -31,7 +22,7 @@ int			print_char(int fd, va_list *ap)
 	return (1);
 }
 
-int			print_int(int fd, va_list *ap)
+static int	print_int(int fd, va_list *ap)
 {
 	char	*s;
 	int		len;
@@ -47,7 +38,7 @@ int			print_int(int fd, va_list *ap)
 		return (0);
 }
 
-int			print_string(int fd, va_list *ap)
+static int	print_string(int fd, va_list *ap)
 {
 	char	*s;
 
@@ -56,6 +47,15 @@ int			print_string(int fd, va_list *ap)
 	ft_putstr_fd(s, fd);
 	return (ft_strlen(s));
 }
+
+t_print		g_print[] =
+{
+	{'d', &print_int},
+	{'i', &print_int},
+	{'c', &print_char},
+	{'s', &print_string},
+	{0, NULL}
+};
 
 static int	print(int fd, char format, va_list *ap)
 {
@@ -71,7 +71,7 @@ static int	print(int fd, char format, va_list *ap)
 	return (0);
 }
 
-int			ft_vdprintf(int fd, const char *format, va_list *ap)
+int			ft_vdprintf(int fd, const char *format, va_list ap)
 {
 	int	len;
 
@@ -79,7 +79,7 @@ int			ft_vdprintf(int fd, const char *format, va_list *ap)
 	while (*format)
 	{
 		if (*format == '%' && *++format != '%')
-			len += print(fd, *format, ap);
+			len += print(fd, *format, &ap);
 		else
 			len += write(fd, format, 1);
 		format++;
