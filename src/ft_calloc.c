@@ -11,14 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr;
-
-	size *= count;
-	if ((ptr = malloc(size)))
-		ft_bzero(ptr, size);
-	return (ptr);
+	return (ft_memalloc(count * size));
 }
