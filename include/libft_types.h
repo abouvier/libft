@@ -21,10 +21,10 @@ typedef void		(*t_del)();
 
 typedef struct		s_list
 {
-	struct s_list	*next;
-	struct s_list	*prev;
 	void			*content;
 	size_t			content_size;
+	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 
 typedef enum		e_dir
