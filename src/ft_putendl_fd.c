@@ -14,9 +14,9 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	char	*tmp;
+	char	*t;
 
-	if ((tmp = ft_strjoin(s, "\n")))
-		ft_putstr_fd(tmp, fd);
-	ft_strdel(&tmp);
+	if ((t = ft_strjoin(s, "\n")))
+		ft_putstr_fd(t, fd);
+	ft_strdel(&t);
 }

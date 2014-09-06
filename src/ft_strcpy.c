@@ -10,13 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcpy(char *s1, const char *s2)
+char	*ft_strcpy(char *dest, const char *src)
 {
 	char	*p;
 
-	p = s1;
-	while (*s2)
-		*p++ = *s2++;
+	p = dest;
+	while (*src)
+		*p++ = *src++;
 	*p = '\0';
-	return (s1);
+	return (dest);
 }
