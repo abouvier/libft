@@ -6,7 +6,7 @@
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 15:19:37 by abouvier          #+#    #+#             */
-/*   Updated: 2013/11/21 15:38:51 by abouvier         ###   ########.fr       */
+/*   Updated: 2015/01/31 02:25:21 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 char	*ft_strnew(size_t size)
 {
-	return ((char *)ft_calloc(size + 1, sizeof(char)));
+	return (ft_memalloc(size + 1));
 }
