@@ -13,7 +13,7 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-OBJDIR = obj
+SRCDIR = src
 SRCS = \
 	ft_atoi.c \
 	ft_basename.c \
@@ -139,24 +139,27 @@ SRCS = \
 	ft_vdprintf.c \
 	ft_printf.c \
 	ft_kthxbye.c
-INCS := libft.h libft_cdefs.h libft_types.h get_next_line.h
+INCDIR = include
+CPPFLAGS := $(addprefix -I,$(INCDIR))
+INCS = libft.h libft_cdefs.h libft_types.h libft_printf.h get_next_line.h
+INCS := $(addprefix $(INCDIR)/,$(INCS))
+OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
-CPPFLAGS := $(addprefix -I,include)
-VPATH := include src
 
 all: $(NAME)
 
 $(NAME): lib/$(NAME)
 
 lib/$(NAME): $(OBJS) | lib
-	$(AR) rcs $@ $?
+	$(AR) $(ARFLAGS) $@ $?
+	ranlib $@
 
 $(OBJS): Makefile | $(OBJDIR)
 
 lib $(OBJDIR):
 	mkdir -p $@
 
-$(OBJDIR)/%.o: %.c $(INCS)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCS)
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(OUTPUT_OPTION) $<
 
 clean:

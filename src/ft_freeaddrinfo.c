@@ -6,15 +6,15 @@
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 11:06:23 by abouvier          #+#    #+#             */
-/*   Updated: 2013/11/21 11:06:24 by abouvier         ###   ########.fr       */
+/*   Updated: 2015/01/24 00:06:38 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_freeaddrinfo(struct addrinfo *ai)
+void	ft_freeaddrinfo(t_ai *ai)
 {
-	struct addrinfo	*next;
+	t_ai	*next;
 
 	while (ai)
 	{

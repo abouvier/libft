@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sockcli.c                                       :+:      :+:    :+:   */
+/*   libft_printf.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/25 10:32:47 by abouvier          #+#    #+#             */
-/*   Updated: 2015/01/24 00:07:13 by abouvier         ###   ########.fr       */
+/*   Created: 2015/01/24 00:14:43 by abouvier          #+#    #+#             */
+/*   Updated: 2015/02/05 02:28:04 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <sys/socket.h>
-#include <unistd.h>
+#ifndef LIBFT_PRINTF_H
+# define LIBFT_PRINTF_H
 
-int	ft_sockcli(const t_ai *ai)
+# include <stdarg.h>
+
+typedef struct	s_print
 {
-	int	fd;
+	char		format;
+	int			(*print)(int, va_list);
+}				t_print;
 
-	while (ai)
-	{
-		if ((fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) > -1)
-		{
-			if (!connect(fd, ai->ai_addr, ai->ai_addrlen))
-				return (fd);
-			close(fd);
-		}
-		ai = ai->ai_next;
-	}
-	return (-1);
-}
+static int		print_char(int fd, va_list ap);
+static int		print_int(int fd, va_list ap);
+static int		print_string(int fd, va_list ap);
+
+#endif

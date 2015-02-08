@@ -6,7 +6,7 @@
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 11:27:01 by abouvier          #+#    #+#             */
-/*   Updated: 2014/02/09 22:27:00 by abouvier         ###   ########.fr       */
+/*   Updated: 2015/01/24 00:08:53 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "libft_cdefs.h"
 # include "libft_types.h"
-# include <netdb.h>
+# include <stdarg.h>
 
 extern char	**g_environ;
 
