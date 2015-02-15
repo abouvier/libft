@@ -142,7 +142,7 @@ SRCS = \
 	ft_tblsize.c
 INCDIR = include
 CPPFLAGS := $(addprefix -I,$(INCDIR))
-INCS = libft.h libft_cdefs.h libft_types.h libft_printf.h get_next_line.h
+INCS = libft.h libft_cdefs.h libft_types.h get_next_line.h printf.h
 INCS := $(addprefix $(INCDIR)/,$(INCS))
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
