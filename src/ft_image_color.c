@@ -18,7 +18,7 @@ unsigned	ft_image_color(const t_img *img, int color)
 	unsigned	value;
 
 	value = mlx_get_color_value(img->mlx, color);
-	if (img->endian)
+	if (img->endian == big)
 		value = ft_bswap_32(value);
 	return (value);
 }
