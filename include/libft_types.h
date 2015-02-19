@@ -33,16 +33,22 @@ typedef enum		e_dir
 	right
 }					t_dir;
 
+typedef enum		e_endian
+{
+	little,
+	big
+}					t_endian;
+
 typedef struct		s_img
 {
+	int				bpp;
+	int				bpr;
+	void			*mlx;
 	void			*ptr;
+	char			*data;
 	int				width;
-	int				endian;
 	int				height;
-	void			*mlx_ptr;
-	int				size_line;
-	char			*data_addr;
-	int				bytes_per_pixel;
+	t_endian		endian;
 }					t_img;
 
 typedef struct addrinfo	t_ai;

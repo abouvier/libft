@@ -14,11 +14,9 @@
 
 unsigned	ft_image_pixel_get(const t_img *img, int x, int y)
 {
-	unsigned	color_value;
+	unsigned	color;
 
-	color_value = 0;
-	ft_memcpy(&color_value,
-		img->data_addr + x * img->bytes_per_pixel + y * img->size_line,
-		img->bytes_per_pixel);
-	return (color_value);
+	color = 0;
+	ft_memcpy(&color, img->data + x * img->bpp + y * img->bpr, img->bpp);
+	return (color);
 }

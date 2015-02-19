@@ -13,20 +13,20 @@
 #include "libft.h"
 #include <mlx.h>
 
-t_img	*ft_image_create(void *mlx_ptr, int width, int height)
+t_img	*ft_image_create(void *mlx, int width, int height)
 {
 	t_img	*img;
 
 	if ((img = ft_memalloc(sizeof(*img))))
 	{
-		if ((img->ptr = mlx_new_image(mlx_ptr, width, height)))
+		if ((img->ptr = mlx_new_image(mlx, width, height)))
 		{
-			img->data_addr = mlx_get_data_addr(img->ptr, &img->bytes_per_pixel,
-				&img->size_line, &img->endian);
-			img->bytes_per_pixel /= 8;
-			img->mlx_ptr = mlx_ptr;
+			img->data = mlx_get_data_addr(img->ptr, &img->bpp, &img->bpr,
+				(int *)&img->endian);
 			img->height = height;
 			img->width = width;
+			img->mlx = mlx;
+			img->bpp /= 8;
 		}
 		else
 			ft_memdel(&img);

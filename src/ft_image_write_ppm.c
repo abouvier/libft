@@ -16,7 +16,7 @@
 #include <unistd.h>
 #include <fcntl.h>
 
-void	ft_image_write_ppm(const char *filename, const t_img *img)
+void	ft_image_write_ppm(const char *ppm, const t_img *img)
 {
 	int		i;
 	int		fd;
@@ -24,16 +24,16 @@ void	ft_image_write_ppm(const char *filename, const t_img *img)
 	char	*data;
 
 	size = img->width * img->height;
-	if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1
+	if ((fd = open(ppm, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1
 		&& (data = ft_memalloc(3 * size)))
 	{
 		i = 0;
 		ft_dprintf(fd, "P6\n%d %d\n255\n", img->width, img->height);
 		while (i < size)
 		{
-			data[i * 3] = img->data_addr[i * 4 + 2];
-			data[i * 3 + 1] = img->data_addr[i * 4 + 1];
-			data[i * 3 + 2] = img->data_addr[i * 4];
+			data[i * 3] = img->data[i * 4 + 2];
+			data[i * 3 + 1] = img->data[i * 4 + 1];
+			data[i * 3 + 2] = img->data[i * 4];
 			i++;
 		}
 		i = write(fd, data, 3 * size);

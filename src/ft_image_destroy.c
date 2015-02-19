@@ -15,6 +15,6 @@
 
 void	ft_image_destroy(t_img **img)
 {
-	mlx_destroy_image((*img)->mlx_ptr, (*img)->ptr);
+	mlx_destroy_image((*img)->mlx, (*img)->ptr);
 	ft_memdel(img);
 }
