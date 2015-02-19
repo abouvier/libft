@@ -25,8 +25,8 @@ int	ft_setenv(const char *name, const char *value, int overwrite)
 	ft_unsetenv(name);
 	while (g_environ[i])
 		i++;
-	g_environ = (char **)ft_realloc((void **)&g_environ, i
-		* sizeof(*g_environ), (i + 2) * sizeof(*g_environ));
+	g_environ = (char **)ft_realloc(&g_environ, i * sizeof(*g_environ), (i + 2)
+		* sizeof(*g_environ));
 	tmp = ft_strjoin(name, "=");
 	g_environ[i] = ft_strjoin(tmp, value);
 	ft_strdel(&tmp);
