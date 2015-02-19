@@ -19,5 +19,5 @@ static char	sanitize(char c)
 
 char		*ft_sanitize(const char *s)
 {
-	return (ft_strmap(s, &sanitize));
+	return (ft_strmap(s, sanitize));
 }
