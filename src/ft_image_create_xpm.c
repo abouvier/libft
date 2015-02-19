@@ -17,7 +17,7 @@ t_img	*ft_image_create_xpm(void *mlx_ptr, char *filename)
 {
 	t_img	*img;
 
-	if ((img = (t_img *)ft_memalloc(sizeof(*img))))
+	if ((img = ft_memalloc(sizeof(*img))))
 	{
 		if ((img->ptr = mlx_xpm_file_to_image(mlx_ptr, filename, &img->width,
 				&img->height)))

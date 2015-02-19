@@ -17,8 +17,8 @@ char	*ft_pathjoin(const char *p1, const char *p2)
 	size_t	len;
 	char	*join;
 
-	join = ft_strdup(p1);
 	len = ft_strlen(p1);
+	join = ft_strdup(p1);
 	while (len-- && join[len] == '/')
 		join[len] = '\0';
 	p1 = ft_strjoin(join, "/");

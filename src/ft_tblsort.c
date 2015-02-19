@@ -27,8 +27,8 @@ void		ft_tblsort(void *atbl, size_t size, t_cmp cmp)
 	void	**tbl;
 	size_t	newsize;
 
+	tbl = atbl;
 	newsize = 1;
-	tbl = (void **)atbl;
 	while (newsize)
 	{
 		i = 1;

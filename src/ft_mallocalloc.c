@@ -17,7 +17,7 @@ void	*ft_mallocalloc(size_t c1, size_t s1, size_t c2, size_t s2)
 	size_t	i;
 	void	**ptr;
 
-	if ((ptr = (void **)ft_calloc(c1 + 1, s1)))
+	if ((ptr = ft_calloc(c1 + 1, s1)))
 	{
 		i = 0;
 		while (i < c1)

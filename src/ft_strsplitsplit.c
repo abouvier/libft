@@ -30,7 +30,7 @@ char	**ft_strsplitsplit(const char *s1, const char *s2)
 		else
 			s1++;
 	}
-	split = (char **)ft_lsttbl(word);
+	split = ft_lsttbl(word);
 	ft_lstdel(&word, NULL);
 	return (split);
 }

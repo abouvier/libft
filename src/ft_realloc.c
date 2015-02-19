@@ -17,7 +17,7 @@ void	*ft_realloc(void *ptr, size_t size, size_t new_size)
 	void	**p;
 	void	*new_ptr;
 
-	p = (void **)ptr;
+	p = ptr;
 	if (size == new_size)
 		return (*p);
 	if ((new_ptr = ft_memalloc(new_size)))

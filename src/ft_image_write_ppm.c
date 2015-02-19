@@ -25,7 +25,7 @@ void	ft_image_write_ppm(const char *filename, const t_img *img)
 
 	size = img->width * img->height;
 	if ((fd = open(filename, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1
-		&& (data = (char *)ft_memalloc(3 * size)))
+		&& (data = ft_memalloc(3 * size)))
 	{
 		i = 0;
 		ft_dprintf(fd, "P6\n%d %d\n255\n", img->width, img->height);

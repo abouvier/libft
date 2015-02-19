@@ -27,7 +27,7 @@ char	*ft_escape(const char *s)
 	{
 		if (*s == '\'')
 		{
-			esc = (char *)ft_realloc(&esc, len + 1, len + 4);
+			esc = ft_realloc(&esc, len + 1, len + 4);
 			ft_strcat(&esc[i], "'\\''");
 			len += 3;
 			i += 4;

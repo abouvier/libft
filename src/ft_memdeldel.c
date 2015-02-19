@@ -18,7 +18,7 @@ void	ft_memdeldel(void *aap)
 	void	***p;
 
 	i = 0;
-	p = (void ***)aap;
+	p = aap;
 	while (*p && i[*p])
 		ft_memdel(&i++[*p]);
 	ft_memdel(p);

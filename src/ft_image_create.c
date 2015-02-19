@@ -17,7 +17,7 @@ t_img	*ft_image_create(void *mlx_ptr, int width, int height)
 {
 	t_img	*img;
 
-	if ((img = (t_img *)ft_memalloc(sizeof(*img))))
+	if ((img = ft_memalloc(sizeof(*img))))
 	{
 		if ((img->ptr = mlx_new_image(mlx_ptr, width, height)))
 		{

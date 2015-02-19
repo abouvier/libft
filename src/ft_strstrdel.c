@@ -19,5 +19,5 @@ void	ft_strstrdel(char ***ass)
 	i = 0;
 	while (*ass && i[*ass])
 		ft_strdel(*ass + i++);
-	ft_memdel((void **)ass);
+	ft_memdel(ass);
 }
