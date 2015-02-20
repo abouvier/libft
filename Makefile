@@ -12,7 +12,7 @@
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -O3
 SRCDIR = src
 SRCS = \
 	ft_atoi.c \
