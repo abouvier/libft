@@ -12,11 +12,9 @@
 
 #include "libft.h"
 
-#pragma GCC optimize "O2"
-
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
-	char	*p;
+	volatile char	*p;
 
 	p = dest;
 	while (*src && n)

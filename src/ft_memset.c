@@ -12,11 +12,9 @@
 
 #include "libft.h"
 
-#pragma GCC optimize "O2"
-
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char	*p;
+	volatile unsigned char	*p;
 
 	p = b;
 	while (len--)
