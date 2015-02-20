@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma GCC optimize "O2"
-
 #include "libft.h"
+
+#pragma GCC optimize "O2"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

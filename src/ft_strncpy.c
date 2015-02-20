@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma GCC optimize "O2"
-
 #include "libft.h"
+
+#pragma GCC optimize "O2"
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
 {
