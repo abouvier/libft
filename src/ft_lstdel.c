@@ -14,7 +14,7 @@
 
 void	ft_lstdel(t_list **alst, t_del del)
 {
-	if (*alst && (*alst)->next)
+	if (*alst)
 		ft_lstdel(&(*alst)->next, del);
 	ft_lstdelone(alst, del);
 }
