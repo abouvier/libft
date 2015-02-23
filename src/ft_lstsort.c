@@ -40,7 +40,7 @@ void		ft_lstsort(t_list *lst, t_cmp cmp)
 		newsize = 0;
 		while (i < size)
 		{
-			if ((*cmp)(l->content, l->next->content) > 0)
+			if (cmp(l->content, l->next->content) > 0)
 			{
 				ft_lstswap(l, l->next);
 				newsize = i;

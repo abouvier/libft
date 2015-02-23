@@ -35,7 +35,7 @@ void		ft_tblsort(void *atbl, size_t size, t_cmp cmp)
 		newsize = 0;
 		while (i < size)
 		{
-			if ((*cmp)(tbl[i - 1], tbl[i]) > 0)
+			if (cmp(tbl[i - 1], tbl[i]) > 0)
 			{
 				ft_tblswap(&tbl[i - 1], &tbl[i]);
 				newsize = i;

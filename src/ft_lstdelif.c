@@ -21,7 +21,7 @@ void	ft_lstdelif(t_list **alst, void *content, t_cmp cmp, t_del del)
 	while (elem)
 	{
 		next = elem->next;
-		if (!(*cmp)(elem->content, content))
+		if (!cmp(elem->content, content))
 		{
 			if (elem->prev)
 				elem->prev->next = next;
