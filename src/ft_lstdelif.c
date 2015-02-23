@@ -23,14 +23,12 @@ void	ft_lstdelif(t_list **alst, void *content, t_cmp cmp, t_del del)
 		next = elem->next;
 		if (!(*cmp)(elem->content, content))
 		{
-			if (!elem->prev)
-			{
-				if (next)
-					next->prev = NULL;
-				*alst = next;
-			}
-			else
+			if (elem->prev)
 				elem->prev->next = next;
+			else
+				*alst = next;
+			if (next)
+				next->prev = elem->prev;
 			ft_lstdelone(&elem, del);
 		}
 		elem = next;
