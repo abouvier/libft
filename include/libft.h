@@ -146,5 +146,6 @@ int			ft_dprintf(int fd, const char *format, ...);
 int			ft_vdprintf(int fd, const char *format, va_list ap);
 uint32_t	ft_bswap_32(uint32_t x);
 size_t		ft_tblsize(const void *atbl);
+int			ft_log2(unsigned int x);
 
 #endif

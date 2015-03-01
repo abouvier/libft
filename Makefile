@@ -139,7 +139,8 @@ SRCS = \
 	ft_vdprintf.c \
 	ft_printf.c \
 	ft_kthxbye.c \
-	ft_tblsize.c
+	ft_tblsize.c \
+	ft_log2.c
 INCDIR = include
 CPPFLAGS := $(addprefix -I,$(INCDIR))
 INCS = libft.h libft_cdefs.h libft_types.h get_next_line.h printf.h
