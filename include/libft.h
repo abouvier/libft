@@ -148,5 +148,6 @@ uint32_t	ft_bswap_32(uint32_t x);
 size_t		ft_tblsize(const void *atbl);
 int			ft_log2(unsigned int x);
 void		ft_image_clear(t_img *img);
+int			ft_scandir(const char *dirname, t_list **namelist, t_filter, t_cmp);
 
 #endif

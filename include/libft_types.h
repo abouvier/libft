@@ -16,40 +16,41 @@
 # include <stddef.h>
 # include <netdb.h>
 
-typedef int			(*t_cmp)();
-typedef void		(*t_del)();
+typedef int				(*t_cmp)();
+typedef void			(*t_del)();
+typedef int				(*t_filter)();
 
-typedef struct		s_list
+typedef struct			s_list
 {
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-	struct s_list	*prev;
-}					t_list;
+	void				*content;
+	size_t				content_size;
+	struct s_list		*next;
+	struct s_list		*prev;
+}						t_list;
 
-typedef enum		e_dir
+typedef enum			e_dir
 {
 	left,
 	right
-}					t_dir;
+}						t_dir;
 
-typedef enum		e_endian
+typedef enum			e_endian
 {
 	little,
 	big
-}					t_endian;
+}						t_endian;
 
-typedef struct		s_img
+typedef struct			s_img
 {
-	int				bpp;
-	int				bpr;
-	void			*mlx;
-	void			*ptr;
-	char			*data;
-	int				width;
-	int				height;
-	t_endian		endian;
-}					t_img;
+	int					bpp;
+	int					bpr;
+	void				*mlx;
+	void				*ptr;
+	char				*data;
+	int					width;
+	int					height;
+	t_endian			endian;
+}						t_img;
 
 typedef struct addrinfo	t_ai;
 
