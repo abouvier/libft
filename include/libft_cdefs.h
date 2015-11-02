@@ -47,42 +47,46 @@
 #  define MLXK_KP_0				XK_KP_Insert
 #  define MLXK_C				XK_c
 #  define MLXK_R				XK_r
+#  define MLXK_V				XK_v
 
 #  define MLX_MOUSE_MOVE		MotionNotify
 #  define MLX_MOUSE_MOVE_MASK	PointerMotionMask
 
-#  define MLXK_MOUSE_LEFT		1
-#  define MLXK_MOUSE_MIDDLE		2
-#  define MLXK_MOUSE_RIGHT		3
-#  define MLXK_MOUSE_WHEEL_UP	4
-#  define MLXK_MOUSE_WHEEL_DOWN	5
+#  define MLXM_LEFT				Button1
+#  define MLXM_MIDDLE			Button2
+#  define MLXM_RIGHT			Button3
+#  define MLXM_WHEEL_UP			Button4
+#  define MLXM_WHEEL_DOWN		Button5
 
 # else
 
-#  define MLX_KEY_PRESS			2
-#  define MLX_KEY_PRESS_MASK	(1L << 0)
-#  define MLX_KEY_RELEASE		3
-#  define MLX_KEY_RELEASE_MASK	(1L << 1)
+#  include <HIToolbox/Events.h>
 
-#  define MLXK_ESCAPE			0x35
-#  define MLXK_UP				0x7e
-#  define MLXK_RIGHT			0x7c
-#  define MLXK_DOWN				0x7d
-#  define MLXK_LEFT				0x7b
-#  define MLXK_KP_ADD			0x45
-#  define MLXK_KP_SUB			0x4e
-#  define MLXK_KP_0				0x52
-#  define MLXK_C				0x08
-#  define MLXK_R				0x0f
+#  define MLX_KEY_PRESS			2
+#  define MLX_KEY_PRESS_MASK	0
+#  define MLX_KEY_RELEASE		3
+#  define MLX_KEY_RELEASE_MASK	0
+
+#  define MLXK_ESCAPE			kVK_Escape
+#  define MLXK_UP				kVK_UpArrow
+#  define MLXK_RIGHT			kVK_RightArrow
+#  define MLXK_DOWN				kVK_DownArrow
+#  define MLXK_LEFT				kVK_LeftArrow
+#  define MLXK_KP_ADD			kVK_ANSI_KeypadPlus
+#  define MLXK_KP_SUB			kVK_ANSI_KeypadMinus
+#  define MLXK_KP_0				kVK_ANSI_Keypad0
+#  define MLXK_C				kVK_ANSI_C
+#  define MLXK_R				kVK_ANSI_R
+#  define MLXK_V				kVK_ANSI_V
 
 #  define MLX_MOUSE_MOVE		6
-#  define MLX_MOUSE_MOVE_MASK	(1L << 6)
+#  define MLX_MOUSE_MOVE_MASK	0
 
-#  define MLXK_MOUSE_LEFT		1
-#  define MLXK_MOUSE_MIDDLE		2
-#  define MLXK_MOUSE_RIGHT		3
-#  define MLXK_MOUSE_WHEEL_UP	4
-#  define MLXK_MOUSE_WHEEL_DOWN	5
+#  define MLXM_LEFT				1
+#  define MLXM_MIDDLE			2
+#  define MLXM_RIGHT			3
+#  define MLXM_WHEEL_UP			4
+#  define MLXM_WHEEL_DOWN		5
 
 # endif
 
