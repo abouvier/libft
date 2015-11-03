@@ -18,11 +18,11 @@
 typedef struct	s_print
 {
 	char		format;
-	int			(*print)(int, va_list);
+	int			(*print)(int, va_list *);
 }				t_print;
 
-static int		print_char(int fd, va_list ap);
-static int		print_int(int fd, va_list ap);
-static int		print_string(int fd, va_list ap);
+static int		print_char(int fd, va_list *ap);
+static int		print_int(int fd, va_list *ap);
+static int		print_string(int fd, va_list *ap);
 
 #endif
