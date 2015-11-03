@@ -13,19 +13,17 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include "libft.h"
+# include "libft_types.h"
 
 # define BUF_SIZE	1024
 
 # define CHUNK		chunk->content
 # define CHUNK_SIZE	chunk->content_size
 
-typedef struct	s_buffer
+typedef struct		s_buffer
 {
-	size_t		size;
-	t_list		*chunk;
-}				t_buffer;
-
-int				get_next_line(int const fd, char **line);
+	size_t			size;
+	t_list			*chunk;
+}					t_buffer;
 
 #endif

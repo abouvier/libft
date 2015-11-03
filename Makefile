@@ -13,6 +13,7 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -O3
+CPPFLAGS = -Iinclude -MMD
 SRCDIR = src
 SRCS = \
 	ft_atoi.c \
@@ -143,35 +144,31 @@ SRCS = \
 	ft_log2.c \
 	ft_image_clear.c \
 	ft_scandir.c
-INCDIR = include
-CPPFLAGS := $(addprefix -I,$(INCDIR))
-INCS = libft.h libft_cdefs.h libft_types.h get_next_line.h printf.h
-INCS := $(addprefix $(INCDIR)/,$(INCS))
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 
 all: $(NAME)
 
-$(NAME): lib/$(NAME)
-
-lib/$(NAME): $(OBJS) | lib
+$(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 	ranlib $@
 
 $(OBJS): Makefile | $(OBJDIR)
 
-lib $(OBJDIR):
+$(OBJDIR):
 	mkdir -p $@
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(INCS)
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(OUTPUT_OPTION) $<
 
 clean:
 	$(RM) -R $(OBJDIR)
 
 fclean: clean
-	$(RM) -R lib
+	$(RM) $(NAME)
 
 re: fclean all
 
 .PHONY: clean
+
+-include $(OBJS:.o=.d)
