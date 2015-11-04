@@ -143,7 +143,8 @@ SRCS = \
 	ft_tblsize.c \
 	ft_log2.c \
 	ft_image_clear.c \
-	ft_scandir.c
+	ft_scandir.c \
+	ft_sgn.c
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 

@@ -150,5 +150,6 @@ int			ft_log2(unsigned int x);
 void		ft_image_clear(t_img *img);
 int			ft_scandir(const char *dirname, t_list **namelist, t_filter, t_cmp);
 int			get_next_line(int const fd, char **line);
+int			ft_sgn(long double x);
 
 #endif
