@@ -145,7 +145,8 @@ SRCS = \
 	ft_image_clear.c \
 	ft_scandir.c \
 	ft_sgn.c \
-	ft_lstfree.c
+	ft_lstfree.c \
+	ft_lstswap.c
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 

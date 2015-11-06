@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsort.c                                       :+:      :+:    :+:   */
+/*   ft_lstswap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,30 +12,14 @@
 
 #include "libft.h"
 
-void	ft_lstsort(t_list *lst, t_cmp cmp)
+void	ft_lstswap(t_list *lst, t_list *mst)
 {
-	size_t	i;
-	t_list	*l;
-	size_t	size;
-	size_t	newsize;
+	const void	*tmp;
 
-	newsize = 1;
-	size = ft_lstsize(lst);
-	while (newsize)
-	{
-		i = 1;
-		l = lst;
-		newsize = 0;
-		while (i < size)
-		{
-			if (cmp(l->content, l->next->content) > 0)
-			{
-				ft_lstswap(l, l->next);
-				newsize = i;
-			}
-			l = l->next;
-			i++;
-		}
-		size = newsize;
-	}
+	tmp = lst->content;
+	lst->content = mst->content;
+	mst->content = (void *)tmp;
+	tmp = &lst->content_size;
+	lst->content_size = mst->content_size;
+	mst->content_size = *(size_t *)tmp;
 }
