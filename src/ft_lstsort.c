@@ -19,8 +19,8 @@ void	ft_lstsort(t_list *lst, t_cmp cmp)
 	size_t	size;
 	size_t	newsize;
 
-	newsize = 1;
 	size = ft_lstsize(lst);
+	newsize = size;
 	while (newsize)
 	{
 		i = 1;
@@ -28,7 +28,7 @@ void	ft_lstsort(t_list *lst, t_cmp cmp)
 		newsize = 0;
 		while (i < size)
 		{
-			if (cmp(l->content, l->next->content) > 0)
+			if (cmp(&l->content, &l->next->content) > 0)
 			{
 				ft_lstswap(l, l->next);
 				newsize = i;
