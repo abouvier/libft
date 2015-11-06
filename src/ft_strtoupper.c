@@ -19,6 +19,6 @@ static void	strtoupper(char *s)
 
 char		*ft_strtoupper(char *s)
 {
-	ft_striter(s, &strtoupper);
+	ft_striter(s, strtoupper);
 	return (s);
 }

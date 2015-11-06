@@ -14,15 +14,14 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	char	*map;
 	char	*p;
+	char	*map;
 
-	map = ft_strdup(s);
-	if (map)
+	if ((map = ft_strdup(s)))
 	{
 		p = map;
 		while (*p)
-			*p++ = (*f)(*s++);
+			*p++ = f(*s++);
 	}
 	return (map);
 }

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_image_pixel_put(t_img *img, int x, int y, unsigned color)
+void	ft_image_pixel_put(t_img *img, int x, int y, unsigned int color)
 {
 	ft_memcpy(img->data + x * img->bpp + y * img->bpr, &color, img->bpp);
 }

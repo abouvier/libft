@@ -18,13 +18,12 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*p;
 	char			*mapi;
 
-	mapi = ft_strdup(s);
-	if (mapi)
+	if ((mapi = ft_strdup(s)))
 	{
 		i = 0;
 		p = mapi;
 		while (*p)
-			*p++ = (*f)(i++, *s++);
+			*p++ = f(i++, *s++);
 	}
 	return (mapi);
 }
