@@ -17,7 +17,7 @@
 # include <netdb.h>
 # include <dirent.h>
 
-typedef int				(*t_cmp)();
+typedef int				(*t_cmp)(const void *, const void *);
 typedef void			(*t_del)(void *, size_t);
 typedef int				(*t_filter)(const struct dirent *);
 
