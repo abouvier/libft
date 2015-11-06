@@ -17,7 +17,7 @@
 # include <netdb.h>
 
 typedef int				(*t_cmp)();
-typedef void			(*t_del)();
+typedef void			(*t_del)(void *, size_t);
 typedef int				(*t_filter)();
 
 typedef struct			s_list

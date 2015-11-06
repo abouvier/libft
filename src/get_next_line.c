@@ -19,7 +19,7 @@
 
 static int	reset_buf(t_buffer *buf, char **junk)
 {
-	ft_lstdel(&buf->chunk, &free);
+	ft_lstdel(&buf->chunk, ft_lstfree);
 	if (junk)
 		ft_strdel(junk);
 	buf->size = 0;
@@ -35,7 +35,7 @@ static void	build_line(t_buffer *buf, char *line)
 		next = buf->chunk->next;
 		buf->size -= buf->CHUNK_SIZE;
 		ft_memcpy(line + buf->size, buf->CHUNK, buf->CHUNK_SIZE);
-		ft_lstdelone(&buf->chunk, &free);
+		ft_lstdelone(&buf->chunk, ft_lstfree);
 		buf->chunk = next;
 	}
 }
