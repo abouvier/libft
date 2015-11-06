@@ -17,7 +17,9 @@
 # include "libft_types.h"
 # include <stdarg.h>
 
-extern char	**g_environ;
+/*
+** Part 1
+*/
 
 void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *s, size_t n);
@@ -48,6 +50,10 @@ int			ft_isprint(int c);
 int			ft_toupper(int c);
 int			ft_tolower(int c);
 
+/*
+** Part 2
+*/
+
 void		*ft_memalloc(size_t size);
 void		ft_memdel(void *ap);
 char		*ft_strnew(size_t size);
@@ -73,12 +79,22 @@ void		ft_putstr_fd(char const *s, int fd);
 void		ft_putendl_fd(char const *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
+/*
+** Bonus
+*/
+
 t_list		*ft_lstnew(void const *content, size_t content_size);
 void		ft_lstdelone(t_list **alst, t_del del);
 void		ft_lstdel(t_list **alst, t_del del);
 void		ft_lstadd(t_list **alst, t_list *new);
 void		ft_lstiter(t_list *lst, void (*f)(t_list *));
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *));
+
+/*
+** Extra
+*/
+
+extern char	**g_environ;
 
 size_t		ft_strnlen(const char *s, size_t maxlen);
 int			ft_isspace(int c);
@@ -116,7 +132,7 @@ char		*ft_strinsert(const char *s1, const char *s2, size_t n);
 char		*ft_strcut(const char *s, size_t start, size_t n);
 t_list		*ft_lstlast(const t_list *lst);
 t_img		*ft_image_create(void *mlx, int width, int height);
-void		ft_image_pixel_put(t_img *img, int x, int y, unsigned color);
+void		ft_image_pixel_put(t_img *img, int x, int y, unsigned int color);
 unsigned	ft_image_pixel_get(const t_img *img, int x, int y);
 unsigned	ft_image_color(const t_img *img, int color);
 t_img		*ft_image_create_xpm(void *mlx, char *xpm);
