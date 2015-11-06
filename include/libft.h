@@ -164,7 +164,8 @@ uint32_t	ft_bswap_32(uint32_t x);
 size_t		ft_tblsize(const void *atbl);
 int			ft_log2(unsigned int x);
 void		ft_image_clear(t_img *img);
-int			ft_scandir(const char *dirname, t_list **namelist, t_filter, t_cmp);
+int			ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
+	int (*compar)(const struct dirent **, const struct dirent **));
 int			get_next_line(int const fd, char **line);
 int			ft_sgn(long double x);
 void		ft_lstfree(void *content, size_t content_size);

@@ -15,10 +15,11 @@
 
 # include <stddef.h>
 # include <netdb.h>
+# include <dirent.h>
 
 typedef int				(*t_cmp)();
 typedef void			(*t_del)(void *, size_t);
-typedef int				(*t_filter)();
+typedef int				(*t_filter)(const struct dirent *);
 
 typedef struct			s_list
 {

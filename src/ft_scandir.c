@@ -15,22 +15,26 @@
 #include <dirent.h>
 
 int	ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
-	t_cmp compar)
+	int (*compar)(const struct dirent **, const struct dirent **))
 {
+	size_t			size;
 	DIR				*dirp;
 	struct dirent	*entry;
 
 	if (!(dirp = opendir(dirname)))
 		return (-1);
+	size = 0;
 	*namelist = NULL;
 	while ((entry = readdir(dirp)))
 	{
-		if (filter && !filter(entry->d_name))
+		if (filter && !filter(entry))
 			continue ;
-		ft_lstadd(namelist, ft_lstnew(ft_pathjoin(dirname, entry->d_name), 0));
+		ft_lstadd(namelist, ft_lstnew(ft_memcpy(ft_memalloc(entry->d_reclen),
+			entry, entry->d_reclen), entry->d_reclen));
+		size++;
 	}
 	closedir(dirp);
-	if (compar)
-		ft_lstsort(*namelist, compar);
-	return (ft_lstsize(*namelist));
+	if (compar && size > 1)
+		ft_lstsort(*namelist, (t_cmp)compar);
+	return (size);
 }
