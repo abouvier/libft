@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultoa_base.c                                    :+:      :+:    :+:   */
+/*   ft_ulnbrlen_base.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,22 +12,17 @@
 
 #include "libft.h"
 
-char	*ft_ultoa_base(unsigned long n, unsigned int base)
+size_t	ft_ulnbrlen_base(unsigned long n, unsigned int base)
 {
-	char		*a;
-	size_t		len;
-	static char	s[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	size_t	len;
 
 	if (base < 2 || base > 36)
-		return (NULL);
-	len = ft_ulnbrlen_base(n, base);
-	if ((a = ft_strnew(len)))
+		return (0);
+	len = 1;
+	while (n >= base)
 	{
-		while (len--)
-		{
-			a[len] = s[n % base];
-			n /= base;
-		}
+		n /= base;
+		len++;
 	}
-	return (a);
+	return (len);
 }

@@ -146,7 +146,8 @@ SRCS = \
 	ft_scandir.c \
 	ft_sgn.c \
 	ft_lstfree.c \
-	ft_lstswap.c
+	ft_lstswap.c \
+	ft_ulnbrlen_base.c
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
 

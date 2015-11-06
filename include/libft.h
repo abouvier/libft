@@ -149,7 +149,7 @@ void		ft_putptr(unsigned long ptr);
 void		ft_tblsort(void *atbl, size_t size, t_cmp cmp);
 void		ft_putptr_pad(unsigned long ptr, size_t pad_len);
 char		*ft_ultoa(unsigned long n);
-char		*ft_ultoa_base(unsigned long n, int base);
+char		*ft_ultoa_base(unsigned long n, unsigned int base);
 char		*ft_ultoa_base_pad(unsigned long n, int base, size_t pad_len);
 char		*ft_strtoupper(char *s);
 void		ft_putstrs_fd(int fd, ...);
@@ -169,5 +169,6 @@ int			get_next_line(int const fd, char **line);
 int			ft_sgn(long double x);
 void		ft_lstfree(void *content, size_t content_size);
 void		ft_lstswap(t_list *lst, t_list *mst);
+size_t		ft_ulnbrlen_base(unsigned long n, unsigned int base);
 
 #endif
