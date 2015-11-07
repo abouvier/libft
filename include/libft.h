@@ -174,5 +174,6 @@ int			ft_alphasort(const struct dirent **a, const struct dirent **b);
 void		ft_qsort(void *base, size_t nmemb, size_t size, t_cmp compar);
 void		ft_memswap(void *s1, void *s2, size_t n);
 size_t		ft_lstlen(const t_list *lst);
+char		*ft_lststr(const t_list *lst);
 
 #endif
