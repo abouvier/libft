@@ -166,7 +166,7 @@ void		ft_image_clear(t_img *img);
 int			ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
 	int (*compar)(const struct dirent **, const struct dirent **));
 int			get_next_line(int const fd, char **line);
-int			ft_sgn(long double x);
+int			ft_fsgnl(long double x);
 void		ft_lstfree(void *content, size_t content_size);
 void		ft_lstswap(t_list *lst, t_list *mst);
 size_t		ft_ulnbrlen_base(unsigned long n, unsigned int base);

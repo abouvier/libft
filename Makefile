@@ -143,7 +143,7 @@ SRCS = \
 	ft_log2.c \
 	ft_image_clear.c \
 	ft_scandir.c \
-	ft_sgn.c \
+	ft_fsgnl.c \
 	ft_lstfree.c \
 	ft_lstswap.c \
 	ft_ulnbrlen_base.c \
