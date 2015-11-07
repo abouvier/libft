@@ -146,7 +146,6 @@ void		*ft_mallocalloc(size_t c1, size_t s1, size_t c2, size_t s2);
 void		*ft_lsttbl(const t_list *lst);
 int			ft_isnumber(const char *s);
 void		ft_putptr(unsigned long ptr);
-void		ft_tblsort(void *atbl, size_t size, t_cmp cmp);
 void		ft_putptr_pad(unsigned long ptr, size_t pad_len);
 char		*ft_ultoa(unsigned long n);
 char		*ft_ultoa_base(unsigned long n, unsigned int base);
@@ -172,6 +171,7 @@ void		ft_lstfree(void *content, size_t content_size);
 void		ft_lstswap(t_list *lst, t_list *mst);
 size_t		ft_ulnbrlen_base(unsigned long n, unsigned int base);
 int			ft_alphasort(const struct dirent **a, const struct dirent **b);
+void		ft_qsort(void *base, size_t nmemb, size_t size, t_cmp compar);
 void		ft_memswap(void *s1, void *s2, size_t n);
 
 #endif

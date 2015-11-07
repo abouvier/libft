@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tblsort.c                                       :+:      :+:    :+:   */
+/*   ft_qsort.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,36 +12,27 @@
 
 #include "libft.h"
 
-static void	ft_tblswap(void **a, void **b)
-{
-	void	*tmp;
-
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-void		ft_tblsort(void *atbl, size_t size, t_cmp cmp)
+void	ft_qsort(void *base, size_t nmemb, size_t size, t_cmp compar)
 {
 	size_t	i;
-	void	**tbl;
-	size_t	newsize;
+	size_t	nmemb2;
+	void	*current;
 
-	tbl = atbl;
-	newsize = 1;
-	while (newsize)
+	nmemb2 = nmemb;
+	while (nmemb2)
 	{
 		i = 1;
-		newsize = 0;
-		while (i < size)
+		nmemb2 = 0;
+		while (i < nmemb)
 		{
-			if (cmp(tbl[i - 1], tbl[i]) > 0)
+			current = base + i * size;
+			if (compar(current - size, current) > 0)
 			{
-				ft_tblswap(&tbl[i - 1], &tbl[i]);
-				newsize = i;
+				ft_memswap(current - size, current, size);
+				nmemb2 = i;
 			}
 			i++;
 		}
-		size = newsize;
+		nmemb = nmemb2;
 	}
 }

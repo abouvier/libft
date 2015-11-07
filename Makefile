@@ -92,7 +92,6 @@ SRCS = \
 	ft_strstr.c \
 	ft_strsub.c \
 	ft_strtrim.c \
-	ft_tblsort.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_unsetenv.c \
@@ -149,6 +148,7 @@ SRCS = \
 	ft_lstswap.c \
 	ft_ulnbrlen_base.c \
 	ft_alphasort.c \
+	ft_qsort.c \
 	ft_memswap.c
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
