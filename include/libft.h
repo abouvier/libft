@@ -172,5 +172,6 @@ void		ft_lstfree(void *content, size_t content_size);
 void		ft_lstswap(t_list *lst, t_list *mst);
 size_t		ft_ulnbrlen_base(unsigned long n, unsigned int base);
 int			ft_alphasort(const struct dirent **a, const struct dirent **b);
+void		ft_memswap(void *s1, void *s2, size_t n);
 
 #endif
