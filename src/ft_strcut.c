@@ -11,16 +11,18 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 char	*ft_strcut(const char *s, size_t start, size_t n)
 {
 	size_t	len;
 	char	*cut;
-	char	*tmp;
 
 	len = ft_strlen(s);
-	tmp = ft_strsub(s, 0, MIN(start, len));
-	cut = ft_strjoin(tmp, &s[MIN(start + n, len)]);
-	ft_strdel(&tmp);
+	if (start >= len)
+		n = 0;
+	if ((cut = malloc(len - MIN(n, len - start) + 1)))
+		ft_strcpy(ft_memcpy(cut, s, MIN(start, len)) + MIN(start, len),
+			s + MIN(start + n, len));
 	return (cut);
 }
