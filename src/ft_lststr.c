@@ -24,8 +24,11 @@ char	*ft_lststr(const t_list *lst)
 		s[len] = '\0';
 		while (lst)
 		{
-			len -= lst->content_size - 1;
-			ft_memcpy(s + len, lst->content, lst->content_size - 1);
+			if (lst->content_size)
+			{
+				len -= lst->content_size - 1;
+				ft_memcpy(s + len, lst->content, lst->content_size - 1);
+			}
 			lst = lst->next;
 		}
 	}

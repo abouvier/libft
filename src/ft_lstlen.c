@@ -19,7 +19,8 @@ size_t	ft_lstlen(const t_list *lst)
 	len = 0;
 	while (lst)
 	{
-		len += lst->content_size - 1;
+		if (lst->content_size)
+			len += lst->content_size - 1;
 		lst = lst->next;
 	}
 	return (len);
