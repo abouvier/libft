@@ -101,7 +101,7 @@ SRCS = \
 	ft_escape.c \
 	ft_stradd.c \
 	ft_implode.c \
-	get_next_line.c \
+	gnl/get_next_line.c \
 	ft_memdeldel.c \
 	ft_strdeldel.c \
 	ft_isblank.c \
@@ -155,6 +155,7 @@ SRCS = \
 	ft_putlst_fd.c
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
+OBJDIRS := $(shell echo $(dir $(OBJS)) | tr ' ' '\n' | sort | uniq)
 
 all: $(NAME)
 
@@ -162,9 +163,9 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 	ranlib $@
 
-$(OBJS): Makefile | $(OBJDIR)
+$(OBJS): Makefile | $(OBJDIRS)
 
-$(OBJDIR):
+$(OBJDIRS):
 	mkdir -p $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c

@@ -14,12 +14,11 @@
 #include "libft.h"
 #include <sys/types.h>
 #include <sys/uio.h>
-#include <stdlib.h>
 #include <unistd.h>
 
 static int	reset_buf(t_buffer *buf, char **junk)
 {
-	ft_lstdel(&buf->chunk, ft_lstfree);
+	ft_lstdel(&buf->chunks, ft_lstfree);
 	if (junk)
 		ft_strdel(junk);
 	buf->size = 0;
@@ -30,13 +29,13 @@ static void	build_line(t_buffer *buf, char *line)
 {
 	t_list	*next;
 
-	while (buf->chunk)
+	while (buf->chunks)
 	{
-		next = buf->chunk->next;
+		next = buf->chunks->next;
 		buf->size -= buf->CHUNK_SIZE;
 		ft_memcpy(line + buf->size, buf->CHUNK, buf->CHUNK_SIZE);
-		ft_lstdelone(&buf->chunk, ft_lstfree);
-		buf->chunk = next;
+		ft_lstdelone(&buf->chunks, ft_lstfree);
+		buf->chunks = next;
 	}
 }
 
@@ -62,7 +61,7 @@ static int	set_next_line(t_buffer *buf, char *newline, char **line)
 	{
 		if (!(chunk = ft_lstnew(s, new_size)))
 			return (reset_buf(buf, &s));
-		ft_lstadd(&buf->chunk, chunk);
+		ft_lstadd(&buf->chunks, chunk);
 		buf->size = new_size;
 	}
 	return (1);
@@ -77,14 +76,14 @@ int			get_next_line(int const fd, char **line)
 	t_list			*chunk;
 
 	r = 42;
-	while (!buf.chunk
+	while (!buf.chunks
 		|| (!(n = ft_memchr(buf.CHUNK, '\n', buf.CHUNK_SIZE)) && r))
 	{
 		if (!(s = ft_strnew(BUF_SIZE - 1))
 			|| (r = read(fd, s, BUF_SIZE)) < 0
 			|| !(chunk = ft_lstnew(s, r)))
 			return (reset_buf(&buf, &s));
-		ft_lstadd(&buf.chunk, chunk);
+		ft_lstadd(&buf.chunks, chunk);
 		buf.size += r;
 	}
 	if (buf.size)
