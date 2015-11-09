@@ -15,14 +15,15 @@
 
 # include <stdarg.h>
 
-typedef struct	s_print
+typedef struct	s_printf
 {
-	char		format;
-	int			(*print)(int, va_list *);
-}				t_print;
+	char		specifier;
+	char		*(*arg)(va_list *);
+}				t_printf;
 
-static int		print_char(int fd, va_list *ap);
-static int		print_int(int fd, va_list *ap);
-static int		print_string(int fd, va_list *ap);
+char			*printf_char(va_list *ap);
+char			*printf_int(va_list *ap);
+char			*printf_hexa(va_list *ap);
+char			*printf_string(va_list *ap);
 
 #endif

@@ -135,9 +135,10 @@ SRCS = \
 	ft_socksrv.c \
 	ft_sockcli.c \
 	ft_freeaddrinfo.c \
-	ft_dprintf.c \
-	ft_vdprintf.c \
-	ft_printf.c \
+	printf/ft_dprintf.c \
+	printf/ft_vdprintf.c \
+	printf/ft_printf.c \
+	printf/printf.c \
 	ft_kthxbye.c \
 	ft_tblsize.c \
 	ft_log2.c \
