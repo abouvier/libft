@@ -114,7 +114,7 @@ SRCS = \
 	ft_strinsert.c \
 	ft_strcut.c \
 	ft_lstlast.c \
-	ft_bswap_32.c \
+	ft_bswap32.c \
 	ft_image_pixel_put.c \
 	ft_image_pixel_get.c \
 	ft_image_write_ppm.c \
