@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <netdb.h>
+#include <sys/types.h>
 #include <sys/socket.h>
 #include <unistd.h>
 
-int	ft_sockcli(const t_ai *ai)
+int	ft_sockcli(const struct addrinfo *ai)
 {
 	int	fd;
 

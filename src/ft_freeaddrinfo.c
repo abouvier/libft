@@ -10,11 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <netdb.h>
 
-void	ft_freeaddrinfo(t_ai *ai)
+void	ft_freeaddrinfo(struct addrinfo *ai)
 {
-	t_ai	*next;
+	struct addrinfo	*next;
 
 	while (ai)
 	{

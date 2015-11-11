@@ -14,7 +14,6 @@
 # define LIBFT_TYPES_H
 
 # include <stddef.h>
-# include <netdb.h>
 # include <dirent.h>
 
 typedef int				(*t_cmp)(const void *, const void *);
@@ -52,7 +51,5 @@ typedef struct			s_img
 	int					height;
 	t_endian			endian;
 }						t_img;
-
-typedef struct addrinfo	t_ai;
 
 #endif
