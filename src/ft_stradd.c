@@ -14,9 +14,5 @@
 
 char	*ft_stradd(const char *s, char c)
 {
-	char	add[2];
-
-	add[0] = c;
-	add[1] = '\0';
-	return (ft_strjoin(s, add));
+	return (ft_strjoin(s, (char [2]){c}));
 }
