@@ -16,7 +16,7 @@ void	ft_qsort(void *base, size_t nmemb, size_t size, t_cmp compar)
 {
 	size_t	i;
 	size_t	nmemb2;
-	void	*current;
+	char	*current;
 
 	nmemb2 = nmemb;
 	while (nmemb2)
@@ -25,7 +25,7 @@ void	ft_qsort(void *base, size_t nmemb, size_t size, t_cmp compar)
 		nmemb2 = 0;
 		while (i < nmemb)
 		{
-			current = base + i * size;
+			current = (char *)base + i * size;
 			if (compar(current - size, current) > 0)
 			{
 				ft_memswap(current - size, current, size);

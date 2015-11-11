@@ -22,7 +22,7 @@ char	*ft_strcut(const char *s, size_t start, size_t n)
 	if (start >= len)
 		n = 0;
 	if ((cut = malloc(len - MIN(n, len - start) + 1)))
-		ft_strcpy(ft_memcpy(cut, s, MIN(start, len)) + MIN(start, len),
+		ft_strcpy((char *)ft_memcpy(cut, s, MIN(start, len)) + MIN(start, len),
 			s + MIN(start + n, len));
 	return (cut);
 }
