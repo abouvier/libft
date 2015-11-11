@@ -11,8 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <sys/types.h>
-#include <dirent.h>
+#include <stdlib.h>
 
 int	ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
 	int (*compar)(const struct dirent **, const struct dirent **))
@@ -29,7 +28,7 @@ int	ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
 	{
 		if (filter && !filter(entry))
 			continue ;
-		ft_lstadd(namelist, ft_lstnew(ft_memcpy(ft_memalloc(entry->d_reclen),
+		ft_lstadd(namelist, ft_lstnew(ft_memcpy(malloc(entry->d_reclen),
 			entry, entry->d_reclen), entry->d_reclen));
 		size++;
 	}
