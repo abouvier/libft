@@ -13,8 +13,9 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -pedantic -O3
-CPPFLAGS = -Iinclude -MMD
-SRCDIR = src
+CPPFLAGS = -MMD -Iinclude
+builddir = build
+srcdir = src
 SRCS = \
 	ft_atoi.c \
 	ft_basename.c \
@@ -154,8 +155,8 @@ SRCS = \
 	ft_lstlen.c \
 	ft_lststr.c \
 	ft_putlst_fd.c
-OBJDIR = obj
-OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
+OBJS := $(patsubst %.c,$(builddir)/%.o,$(SRCS))
+DEPS := $(OBJS:.o=.d)
 
 all: $(NAME)
 
@@ -163,16 +164,16 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 	ranlib $@
 
-$(OBJS): Makefile | $(OBJDIR)
+$(OBJS): Makefile | $(builddir)
 
-$(OBJDIR):
+$(builddir):
 	mkdir -p $@
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-	$(CC) -c $(CFLAGS) $(CPPFLAGS) $(OUTPUT_OPTION) $<
+$(builddir)/%.o: $(srcdir)/%.c
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $(OUTPUT_OPTION) $<
 
 clean:
-	$(RM) -R $(OBJDIR)
+	$(RM) -R $(builddir)
 
 fclean: clean
 	$(RM) $(NAME)
@@ -181,4 +182,4 @@ re: fclean all
 
 .PHONY: clean
 
--include $(OBJS:.o=.d)
+-include $(DEPS)
