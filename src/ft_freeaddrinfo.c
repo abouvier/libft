@@ -20,9 +20,9 @@ void	ft_freeaddrinfo(struct addrinfo *ai)
 	while (ai)
 	{
 		next = ai->ai_next;
-		ft_strdel(&ai->ai_canonname);
-		ft_memdel(&ai->ai_addr);
-		ft_memdel(&ai);
+		free(ai->ai_canonname);
+		free(ai->ai_addr);
+		free(ai);
 		ai = next;
 	}
 }
