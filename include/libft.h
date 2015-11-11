@@ -137,7 +137,7 @@ t_img		*ft_image_create(void *mlx, int width, int height);
 void		ft_image_pixel_put(t_img *img, int x, int y, unsigned int color);
 unsigned	ft_image_pixel_get(const t_img *img, int x, int y);
 unsigned	ft_image_color(const t_img *img, int color);
-t_img		*ft_image_create_xpm(void *mlx, char *xpm);
+t_img		*ft_image_create_xpm(void *mlx, const char *xpm);
 void		ft_image_write_ppm(const char *ppm, const t_img *img);
 void		ft_image_destroy(t_img **img);
 int			ft_abs(int j);

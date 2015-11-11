@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <mlx.h>
 
-t_img	*ft_image_create_xpm(void *mlx, char *xpm)
+t_img	*ft_image_create_xpm(void *mlx, const char *xpm)
 {
 	t_img	*img;
 
