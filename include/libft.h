@@ -16,6 +16,7 @@
 # include "libft/cdefs.h"
 # include "libft/types.h"
 # include <stdarg.h>
+# include <stdint.h>
 # include <netdb.h>
 
 /*
