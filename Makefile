@@ -101,7 +101,7 @@ SRCS = \
 	ft_escape.c \
 	ft_stradd.c \
 	ft_implode.c \
-	gnl/get_next_line.c \
+	get_next_line.c \
 	ft_memdeldel.c \
 	ft_strdeldel.c \
 	ft_isblank.c \
@@ -135,10 +135,10 @@ SRCS = \
 	ft_socksrv.c \
 	ft_sockcli.c \
 	ft_freeaddrinfo.c \
-	printf/ft_dprintf.c \
-	printf/ft_vdprintf.c \
-	printf/ft_printf.c \
-	printf/printf.c \
+	ft_dprintf.c \
+	ft_vdprintf.c \
+	ft_printf.c \
+	printf.c \
 	ft_kthxbye.c \
 	ft_tblsize.c \
 	ft_log2.c \
@@ -156,7 +156,6 @@ SRCS = \
 	ft_putlst_fd.c
 OBJDIR = obj
 OBJS := $(patsubst %.c,$(OBJDIR)/%.o,$(SRCS))
-OBJDIRS := $(shell echo $(dir $(OBJS)) | tr ' ' '\n' | sort | uniq)
 
 all: $(NAME)
 
@@ -164,9 +163,9 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 	ranlib $@
 
-$(OBJS): Makefile | $(OBJDIRS)
+$(OBJS): Makefile | $(OBJDIR)
 
-$(OBJDIRS):
+$(OBJDIR):
 	mkdir -p $@
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
