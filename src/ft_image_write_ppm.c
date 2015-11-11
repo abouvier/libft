@@ -11,10 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
 #include <fcntl.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 void	ft_image_write_ppm(const char *ppm, const t_img *img)
 {
@@ -25,7 +24,7 @@ void	ft_image_write_ppm(const char *ppm, const t_img *img)
 
 	size = img->width * img->height;
 	if ((fd = open(ppm, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1
-		&& (data = ft_memalloc(3 * size)))
+		&& (data = malloc(3 * size)))
 	{
 		i = 0;
 		ft_dprintf(fd, "P6\n%d %d\n255\n", img->width, img->height);
@@ -37,7 +36,7 @@ void	ft_image_write_ppm(const char *ppm, const t_img *img)
 			i++;
 		}
 		i = write(fd, data, 3 * size);
-		ft_strdel(&data);
+		free(data);
 	}
 	close(fd);
 }
