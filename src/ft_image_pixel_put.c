@@ -14,5 +14,6 @@
 
 void	ft_image_pixel_put(t_img *img, int x, int y, unsigned int color)
 {
-	ft_memcpy(img->data + x * img->bpp + y * img->bpr, &color, img->bpp);
+	ft_memcpy(img->data + y * img->size_line + x * img->bytes_per_pixel, &color,
+		img->bytes_per_pixel);
 }

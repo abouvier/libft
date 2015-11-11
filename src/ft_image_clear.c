@@ -14,5 +14,5 @@
 
 void	ft_image_clear(t_img *img)
 {
-	ft_bzero(img->data, img->height * img->bpr);
+	ft_bzero(img->data, img->height * img->size_line);
 }

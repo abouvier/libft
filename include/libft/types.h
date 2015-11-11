@@ -42,13 +42,13 @@ typedef enum			e_endian
 
 typedef struct			s_img
 {
-	int					bpp;
-	int					bpr;
 	void				*mlx;
 	void				*ptr;
 	char				*data;
 	int					width;
 	int					height;
+	int					bytes_per_pixel;
+	int					size_line;
 	t_endian			endian;
 }						t_img;
 
