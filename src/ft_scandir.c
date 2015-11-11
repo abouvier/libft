@@ -16,7 +16,7 @@
 int	ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
 	int (*compar)(const struct dirent **, const struct dirent **))
 {
-	size_t			size;
+	int				size;
 	DIR				*dirp;
 	struct dirent	*entry;
 
