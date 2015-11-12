@@ -15,9 +15,8 @@
 
 static char	*printf_arg(char specifier, va_list *ap)
 {
-	int			i;
-	t_printf	printf[] =
-	{
+	int						i;
+	static const t_printf	printf[] = {
 		{'d', printf_int},
 		{'i', printf_int},
 		{'c', printf_char},
@@ -36,7 +35,7 @@ static char	*printf_arg(char specifier, va_list *ap)
 	return (NULL);
 }
 
-static int	vdprintf(t_list **chunks, const char *format, va_list *ap)
+static int	realshit(t_list **chunks, const char *format, va_list *ap)
 {
 	int		len;
 	int		total;
@@ -72,7 +71,7 @@ int			ft_vdprintf(int fd, const char *format, va_list ap)
 
 	chunks = NULL;
 	va_copy(ap_copy, ap);
-	len = vdprintf(&chunks, format, &ap_copy);
+	len = realshit(&chunks, format, &ap_copy);
 	va_end(ap_copy);
 	ft_putlst_fd(chunks, fd);
 	ft_lstdel(&chunks, ft_lstfree);
