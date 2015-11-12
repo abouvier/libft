@@ -60,7 +60,7 @@
 
 # else
 
-#  include <HIToolbox/Events.h>
+#  include <Carbon/Carbon.h>
 
 #  define MLX_KEY_PRESS			2
 #  define MLX_KEY_PRESS_MASK	0
