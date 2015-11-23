@@ -52,4 +52,10 @@ typedef struct			s_img
 	t_endian			endian;
 }						t_img;
 
+typedef struct			s_complex
+{
+	long double			re;
+	long double			im;
+}						t_complex;
+
 #endif

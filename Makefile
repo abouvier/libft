@@ -154,7 +154,14 @@ SRCS = \
 	ft_memswap.c \
 	ft_lstlen.c \
 	ft_lststr.c \
-	ft_putlst_fd.c
+	ft_putlst_fd.c \
+	ft_complex_abs.c \
+	ft_complex_add.c \
+	ft_complex_sub.c \
+	ft_complex_mul.c \
+	ft_complex_div.c \
+	ft_complex_sqrt.c \
+	ft_complex_powi.c
 OBJS := $(patsubst %.c,$(builddir)/%.o,$(SRCS))
 DEPS := $(OBJS:.o=.d)
 

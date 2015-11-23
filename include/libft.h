@@ -178,5 +178,12 @@ void		ft_memswap(void *s1, void *s2, size_t n);
 size_t		ft_lstlen(const t_list *lst);
 char		*ft_lststr(const t_list *lst);
 void		ft_putlst_fd(const t_list *lst, int fd);
+long double	ft_complex_abs(const t_complex *z);
+t_complex	*ft_complex_add(t_complex *z, const t_complex *w);
+t_complex	*ft_complex_sub(t_complex *z, const t_complex *w);
+t_complex	*ft_complex_mul(t_complex *z, const t_complex *w);
+t_complex	*ft_complex_div(t_complex *z, const t_complex *w);
+t_complex	*ft_complex_sqrt(t_complex *z);
+t_complex	*ft_complex_powi(t_complex *z, unsigned int n);
 
 #endif
