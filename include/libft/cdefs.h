@@ -46,6 +46,8 @@
 #  define MLXK_KP_SUB			XK_KP_Subtract
 #  define MLXK_KP_0				XK_KP_Insert
 #  define MLXK_C				XK_c
+#  define MLXK_I				XK_i
+#  define MLXK_O				XK_o
 #  define MLXK_R				XK_r
 #  define MLXK_V				XK_v
 
@@ -76,6 +78,8 @@
 #  define MLXK_KP_SUB			kVK_ANSI_KeypadMinus
 #  define MLXK_KP_0				kVK_ANSI_Keypad0
 #  define MLXK_C				kVK_ANSI_C
+#  define MLXK_I				kVK_ANSI_I
+#  define MLXK_O				kVK_ANSI_O
 #  define MLXK_R				kVK_ANSI_R
 #  define MLXK_V				kVK_ANSI_V
 
