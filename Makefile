@@ -161,7 +161,8 @@ SRCS = \
 	ft_complex_mul.c \
 	ft_complex_div.c \
 	ft_complex_sqrt.c \
-	ft_complex_powi.c
+	ft_complex_powi.c \
+	ft_complex_equ.c
 OBJS := $(patsubst %.c,$(builddir)/%.o,$(SRCS))
 DEPS := $(OBJS:.o=.d)
 

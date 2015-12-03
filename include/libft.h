@@ -185,5 +185,6 @@ t_complex	*ft_complex_mul(t_complex *z, const t_complex *w);
 t_complex	*ft_complex_div(t_complex *z, const t_complex *w);
 t_complex	*ft_complex_sqrt(t_complex *z);
 t_complex	*ft_complex_powi(t_complex *z, unsigned int n);
+int			ft_complex_equ(const t_complex *z, const t_complex *w);
 
 #endif
