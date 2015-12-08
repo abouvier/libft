@@ -11,14 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <math.h>
 
 t_complex	*ft_complex_sqrt(t_complex *z)
 {
-	long double	r;
-
-	r = ft_complex_abs(z);
-	z->im = ft_fsgnl(z->im) * sqrtl((r - z->re) / 2.0L);
-	z->re = sqrtl((r + z->re) / 2.0L);
-	return (z);
+	return (ft_complex_pow(z, REAL(0.5L)));
 }

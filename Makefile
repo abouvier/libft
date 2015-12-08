@@ -12,7 +12,7 @@
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -pedantic -O3
+CFLAGS = -Wall -Wextra -Werror -O3 -ffast-math
 CPPFLAGS = -MMD -Iinclude
 builddir = build
 srcdir = src
@@ -162,7 +162,11 @@ SRCS = \
 	ft_complex_div.c \
 	ft_complex_sqrt.c \
 	ft_complex_powi.c \
-	ft_complex_equ.c
+	ft_complex_equ.c \
+	ft_complex_exp.c \
+	ft_complex_arg.c \
+	ft_complex_log.c \
+	ft_complex_pow.c
 OBJS := $(patsubst %.c,$(builddir)/%.o,$(SRCS))
 DEPS := $(OBJS:.o=.d)
 

@@ -27,6 +27,10 @@
 # define PRINT(...)			DPRINT(1, __VA_ARGS__)
 # define ERROR(...)			DPRINT(2, __VA_ARGS__)
 
+# define COMPLEX(re, im)	&(t_complex){re, im}
+# define REAL(x)			COMPLEX(x, 0.0L)
+# define ZERO				REAL(0.0L)
+
 # ifdef __linux__
 
 #  include <X11/X.h>

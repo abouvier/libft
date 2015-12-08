@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_complex_equ.c                                   :+:      :+:    :+:   */
+/*   ft_complex_log.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/19 12:42:08 by abouvier          #+#    #+#             */
-/*   Updated: 2013/11/21 15:27:22 by abouvier         ###   ########.fr       */
+/*   Created: 2015/06/07 19:39:10 by abouvier          #+#    #+#             */
+/*   Updated: 2015/06/07 19:39:39 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <math.h>
 
-int	ft_complex_equ(const t_complex *z, const t_complex *w)
+t_complex	*ft_complex_log(t_complex *z)
 {
-	return (SQUARE(z->re - w->re) + SQUARE(z->im - w->im) < 0.01L);
+	long double	r;
+
+	r = ft_complex_abs(z);
+	z->im = ft_complex_arg(z);
+	z->re = logl(r);
+	return (z);
 }
