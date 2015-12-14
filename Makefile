@@ -166,7 +166,9 @@ SRCS = \
 	ft_complex_exp.c \
 	ft_complex_arg.c \
 	ft_complex_log.c \
-	ft_complex_pow.c
+	ft_complex_pow.c \
+	ft_vasprintf.c \
+	ft_asprintf.c
 OBJS := $(patsubst %.c,$(builddir)/%.o,$(SRCS))
 DEPS := $(OBJS:.o=.d)
 

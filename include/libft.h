@@ -190,5 +190,7 @@ long double	ft_complex_arg(const t_complex *z);
 t_complex	*ft_complex_exp(t_complex *z);
 t_complex	*ft_complex_log(t_complex *z);
 t_complex	*ft_complex_pow(t_complex *w, const t_complex *z);
+int			ft_vasprintf(char **strp, const char *format, va_list ap);
+int			ft_asprintf(char **strp, const char *format, ...);
 
 #endif
