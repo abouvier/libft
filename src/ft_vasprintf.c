@@ -6,7 +6,7 @@
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/11 17:04:51 by abouvier          #+#    #+#             */
-/*   Updated: 2015/01/24 00:22:21 by abouvier         ###   ########.fr       */
+/*   Updated: 2015/12/16 15:40:14 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static char	*printf_arg(char specifier, va_list *ap)
 	return (NULL);
 }
 
-static int	vasprintf(t_list **chunks, const char *format, va_list *ap)
+static int	vasprintf2(t_list **chunks, const char *format, va_list *ap)
 {
 	int		len;
 	int		total;
@@ -71,7 +71,7 @@ int			ft_vasprintf(char **strp, const char *format, va_list ap)
 
 	chunks = NULL;
 	va_copy(ap_copy, ap);
-	len = vasprintf(&chunks, format, &ap_copy);
+	len = vasprintf2(&chunks, format, &ap_copy);
 	va_end(ap_copy);
 	*strp = ft_lststr(chunks);
 	ft_lstdel(&chunks, ft_lstfree);
