@@ -19,7 +19,7 @@ t_img	*ft_image_create_xpm(void *mlx, const char *xpm)
 
 	if ((img = ft_memalloc(sizeof(*img))))
 	{
-		if ((img->ptr = mlx_xpm_file_to_image(mlx, xpm, &img->width,
+		if ((img->ptr = mlx_xpm_file_to_image(mlx, (char *)xpm, &img->width,
 			&img->height)))
 		{
 			img->data = mlx_get_data_addr(img->ptr, &img->bytes_per_pixel,
