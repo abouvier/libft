@@ -15,10 +15,11 @@
 
 t_complex	*ft_complex_exp(t_complex *z)
 {
-	long double	im;
+	t_complex	w;
 
-	im = z->im;
+	w.re = cosl(z->im);
+	w.im = sinl(z->im);
 	z->re = expl(z->re);
 	z->im = 0.0L;
-	return (ft_complex_mul(z, COMPLEX(cosl(im), sinl(im))));
+	return (ft_complex_mul(z, &w));
 }

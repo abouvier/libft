@@ -14,5 +14,7 @@
 
 t_complex	*ft_complex_sqrt(t_complex *z)
 {
-	return (ft_complex_pow(z, REAL(0.5L)));
+	t_complex	w;
+
+	return (ft_complex_pow(z, REAL(&w, 0.5L)));
 }

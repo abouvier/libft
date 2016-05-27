@@ -13,7 +13,8 @@
 #ifndef LIBFT_TYPES_H
 # define LIBFT_TYPES_H
 
-# include <stddef.h>
+# include "cdefs.h"
+# include <string.h>
 # include <dirent.h>
 
 typedef int				(*t_cmp)(const void *, const void *);

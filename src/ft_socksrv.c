@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <netdb.h>
-#include <sys/types.h>
-#include <sys/socket.h>
+#include "libft.h"
 #include <unistd.h>
 
 int	ft_socksrv(const struct addrinfo *ai, int backlog)

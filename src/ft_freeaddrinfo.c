@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
-#include <netdb.h>
 
 void	ft_freeaddrinfo(struct addrinfo *ai)
 {

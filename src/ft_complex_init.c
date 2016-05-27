@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sockcli.c                                       :+:      :+:    :+:   */
+/*   ft_complex_init.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/25 10:32:47 by abouvier          #+#    #+#             */
-/*   Updated: 2015/01/24 00:07:13 by abouvier         ###   ########.fr       */
+/*   Created: 2013/05/27 12:42:08 by abouvier          #+#    #+#             */
+/*   Updated: 2016/05/27 17:47:59 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-int	ft_sockcli(const struct addrinfo *ai)
+t_complex	*ft_complex_init(t_complex *z, long double re, long double im)
 {
-	int	fd;
-
-	while (ai)
-	{
-		if ((fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) > -1)
-		{
-			if (!connect(fd, ai->ai_addr, ai->ai_addrlen))
-				return (fd);
-			close(fd);
-		}
-		ai = ai->ai_next;
-	}
-	return (-1);
+	z->re = re;
+	z->im = im;
+	return (z);
 }

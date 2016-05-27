@@ -13,9 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "libft/cdefs.h"
 # include "libft/types.h"
-# include <stdint.h>
 # include <stdarg.h>
 # include <netdb.h>
 
@@ -191,5 +189,6 @@ t_complex	*ft_complex_log(t_complex *z);
 t_complex	*ft_complex_pow(t_complex *w, const t_complex *z);
 int			ft_vasprintf(char **strp, const char *format, va_list ap);
 int			ft_asprintf(char **strp, const char *format, ...);
+t_complex	*ft_complex_init(t_complex *z, long double re, long double im);
 
 #endif

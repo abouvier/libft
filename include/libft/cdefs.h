@@ -13,6 +13,8 @@
 #ifndef LIBFT_CDEFS_H
 # define LIBFT_CDEFS_H
 
+# define _XOPEN_SOURCE		600
+
 # define M_PI_180			0.01745329251994329577
 
 # define PATH_STDPATH		"/usr/bin:/bin:/usr/sbin:/sbin"
@@ -23,9 +25,9 @@
 # define MAX(n, m)			((n) > (m) ? (n) : (m))
 # define SQUARE(x)			((x) * (x))
 
-# define COMPLEX(re, im)	&(t_complex){re, im}
-# define REAL(x)			COMPLEX(x, 0.0L)
-# define ZERO				REAL(0.0L)
+# define COMPLEX(z, re, im)	ft_complex_init(z, re, im)
+# define REAL(z, x)			COMPLEX(z, x, 0.0L)
+# define ZERO(z)			REAL(z, 0.0L)
 
 # ifdef __linux__
 

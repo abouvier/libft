@@ -17,7 +17,8 @@ t_complex	*ft_complex_powi(t_complex *z, unsigned int n)
 	t_complex	w;
 
 	w = *z;
-	*z = *REAL(1.0L);
+	z->re = 1.0L;
+	z->im = 0.0L;
 	while (n--)
 		ft_complex_mul(z, &w);
 	return (z);

@@ -70,7 +70,7 @@ int			ft_vasprintf(char **strp, const char *format, va_list ap)
 	va_list	ap_copy;
 
 	chunks = NULL;
-	va_copy(ap_copy, ap);
+	__va_copy(ap_copy, ap);
 	len = vasprintf2(&chunks, format, &ap_copy);
 	va_end(ap_copy);
 	*strp = ft_lststr(chunks);

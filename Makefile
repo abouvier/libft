@@ -6,13 +6,13 @@
 #    By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/19 11:27:36 by abouvier          #+#    #+#              #
-#    Updated: 2014/06/01 22:27:36 by abouvier         ###   ########.fr        #
+#    Updated: 2016/05/27 09:29:04 by abouvier         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -O3 -ffast-math
+CFLAGS = -Wall -Wextra -Werror -ansi -pedantic -O3 -ffast-math
 CPPFLAGS = -MMD -Iinclude
 builddir = build
 srcdir = src
@@ -167,7 +167,8 @@ SRCS = \
 	ft_complex_log.c \
 	ft_complex_pow.c \
 	ft_vasprintf.c \
-	ft_asprintf.c
+	ft_asprintf.c \
+	ft_complex_init.c
 OBJS := $(patsubst %.c,$(builddir)/%.o,$(SRCS))
 DEPS := $(OBJS:.o=.d)
 
