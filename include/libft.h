@@ -153,7 +153,6 @@ char		*ft_ultoa(unsigned long n);
 char		*ft_ultoa_base(unsigned long n, unsigned int base);
 char		*ft_ultoa_base_pad(unsigned long n, int base, size_t pad_len);
 char		*ft_strtoupper(char *s);
-void		ft_putstrs_fd(int fd, ...);
 int			ft_socksrv(const struct addrinfo *ai, int backlog);
 int			ft_sockcli(const struct addrinfo *ai);
 void		ft_freeaddrinfo(struct addrinfo *ai);

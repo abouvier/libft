@@ -132,7 +132,6 @@ SRCS = \
 	ft_ultoa_base.c \
 	ft_ultoa_base_pad.c \
 	ft_strtoupper.c \
-	ft_putstrs_fd.c \
 	ft_socksrv.c \
 	ft_sockcli.c \
 	ft_freeaddrinfo.c \
