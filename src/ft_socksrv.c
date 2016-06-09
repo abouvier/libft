@@ -16,12 +16,12 @@
 int	ft_socksrv(const struct addrinfo *ai, int backlog)
 {
 	int			fd;
-	static int	true = 1;
+	static int	on = 1;
 
 	while (ai)
 	{
 		if ((fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) > -1
-			&& !setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &true, sizeof(true)))
+			&& !setsockopt(fd, SOL_SOCKET, SO_REUSEADDR, &on, sizeof(on)))
 		{
 			if (!bind(fd, ai->ai_addr, ai->ai_addrlen) && !listen(fd, backlog))
 				return (fd);
