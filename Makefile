@@ -12,7 +12,7 @@
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -ansi -pedantic-errors -O3 -ffast-math
+CFLAGS = -Wall -Wextra -Werror -ansi -pedantic-errors -Ofast
 CPPFLAGS = -MMD -Iinclude
 builddir = build
 srcdir = src
