@@ -13,7 +13,7 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -ansi -pedantic-errors -Ofast
-CPPFLAGS = -MMD -Iinclude
+CPPFLAGS = -MMD -D_FORTIFY_SOURCE=2 -Iinclude
 builddir = build
 srcdir = src
 SRCS = \
