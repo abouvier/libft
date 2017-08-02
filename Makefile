@@ -14,8 +14,7 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -ansi -pedantic-errors -Ofast
 CPPFLAGS = -MMD -D_FORTIFY_SOURCE=2 -Iinclude
-builddir = build
-srcdir = src
+VPATH = src
 SRCS = \
 	ft_atoi.c \
 	ft_basename.c \
@@ -169,7 +168,7 @@ SRCS = \
 	ft_vasprintf.c \
 	ft_asprintf.c \
 	ft_complex_init.c
-OBJS := $(patsubst %.c,$(builddir)/%.o,$(SRCS))
+OBJS := $(SRCS:%.c=$(VPATH)/%.o)
 DEPS := $(OBJS:.o=.d)
 
 all: $(NAME)
@@ -178,16 +177,10 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $?
 	ranlib $@
 
-$(OBJS): Makefile | $(builddir)
-
-$(builddir):
-	mkdir -p $@
-
-$(builddir)/%.o: $(srcdir)/%.c
-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $(OUTPUT_OPTION) $<
+$(OBJS): Makefile
 
 clean:
-	$(RM) -R $(builddir)
+	$(RM) $(OBJS) $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)
