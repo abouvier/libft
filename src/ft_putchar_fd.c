@@ -14,8 +14,5 @@
 
 void	ft_putchar_fd(char c, int fd)
 {
-	ssize_t	w;
-
-	w = write(fd, &c, 1);
-	(void)w;
+	(void)(write(fd, &c, 1) + 1);
 }

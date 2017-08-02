@@ -15,8 +15,5 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	ssize_t	w;
-
-	w = write(fd, s, ft_strlen(s));
-	(void)w;
+	(void)(write(fd, s, ft_strlen(s)) + 1);
 }
