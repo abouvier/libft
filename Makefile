@@ -12,7 +12,7 @@
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -ansi -pedantic-errors -Ofast
+CFLAGS = -Wall -Wextra -Werror -Wpedantic -ansi -pedantic-errors -Ofast
 CPPFLAGS = -MMD -D_FORTIFY_SOURCE=2 -iquote include
 VPATH = src
 SRCS = \
