@@ -190,5 +190,6 @@ t_complex	*ft_complex_pow(t_complex *w, const t_complex *z);
 int			ft_vasprintf(char **strp, const char *format, va_list ap);
 int			ft_asprintf(char **strp, const char *format, ...);
 t_complex	*ft_complex_init(t_complex *z, long double re, long double im);
+t_list		*ft_lstnew_nocopy(void const *content, size_t content_size);
 
 #endif

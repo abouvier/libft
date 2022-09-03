@@ -167,7 +167,8 @@ SRCS = \
 	ft_complex_pow.c \
 	ft_vasprintf.c \
 	ft_asprintf.c \
-	ft_complex_init.c
+	ft_complex_init.c \
+	ft_lstnew_nocopy.c
 OBJS := $(SRCS:%.c=$(VPATH)/%.o)
 DEPS := $(OBJS:.o=.d)
 
