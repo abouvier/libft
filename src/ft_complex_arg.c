@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_types.h"
 #include <math.h>
 
 long double	ft_complex_arg(const t_complex *z)

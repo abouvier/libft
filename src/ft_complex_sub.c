@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/types.h"
+#include "libft_types.h"
 
 t_complex	*ft_complex_sub(t_complex *z, const t_complex *w)
 {

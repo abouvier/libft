@@ -13,7 +13,7 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include "libft/types.h"
+# include "libft_types.h"
 # include <stdarg.h>
 # include <netdb.h>
 

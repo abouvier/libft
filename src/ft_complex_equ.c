@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_types.h"
 
 int	ft_complex_equ(const t_complex *z, const t_complex *w)
 {
