@@ -59,7 +59,7 @@ static int	set_next_line(t_buffer *buf, char *newline, char **line)
 	build_line(buf, *line);
 	if (newline)
 	{
-		if (!(chunk = ft_lstnew(s, new_size)))
+		if (!(chunk = ft_lstnew_nocopy(s, new_size)))
 			return (reset_buf(buf, &s));
 		ft_lstadd(&buf->chunks, chunk);
 		buf->size = new_size;
@@ -81,7 +81,7 @@ int			get_next_line(int const fd, char **line)
 	{
 		if (!(s = ft_strnew(BUF_SIZE - 1))
 			|| (r = read(fd, s, BUF_SIZE)) < 0
-			|| !(chunk = ft_lstnew(s, r)))
+			|| !(chunk = ft_lstnew_nocopy(s, r)))
 			return (reset_buf(&buf, &s));
 		ft_lstadd(&buf.chunks, chunk);
 		buf.size += r;

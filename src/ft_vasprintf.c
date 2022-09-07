@@ -57,7 +57,7 @@ static int	vasprintf2(t_list **chunks, const char *format, va_list *ap)
 			chunk = ft_strsub(format, 0, len);
 			format += len;
 		}
-		ft_lstadd(chunks, ft_lstnew(chunk, len + 1));
+		ft_lstadd(chunks, ft_lstnew_nocopy(chunk, len + 1));
 		total += len;
 	}
 	return (total);

@@ -24,7 +24,7 @@ char	**ft_strsplitsplit(const char *s1, const char *s2)
 		if (!ft_strchr(s2, *s1))
 		{
 			len = ft_strcspn(s1, s2);
-			ft_lstadd(&word, ft_lstnew(ft_strsub(s1, 0, len), 0));
+			ft_lstadd(&word, ft_lstnew(s1, len));
 			s1 += len;
 		}
 		else
