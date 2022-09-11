@@ -1,0 +1,8 @@
+-ansi
+-iquoteinclude
+-pedantic-errors
+-Wall
+-Werror
+-Wextra
+-Wpedantic
+-Wno-empty-translation-unit
