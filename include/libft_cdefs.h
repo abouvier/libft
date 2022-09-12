@@ -13,10 +13,6 @@
 #ifndef LIBFT_CDEFS_H
 # define LIBFT_CDEFS_H
 
-# ifdef __linux__
-#  define _POSIX_C_SOURCE	201112L
-# endif
-
 # define M_PI_180			0.01745329251994329577
 
 # define PATH_STDPATH		"/usr/bin:/bin:/usr/sbin:/sbin"

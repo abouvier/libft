@@ -14,6 +14,9 @@ NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -Wpedantic -ansi -pedantic-errors -Ofast
 CPPFLAGS = -MMD -D_FORTIFY_SOURCE=2 -iquote include
+ifeq ($(shell uname),Linux)
+	CPPFLAGS += -D_POSIX_C_SOURCE=200112L
+endif
 VPATH = src
 SRCS = \
 	ft_atoi.c \
