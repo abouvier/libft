@@ -11,9 +11,9 @@
 #******************************************************************************#
 
 NAME = libft.a
-CC = gcc
-CFLAGS = -Wall -Wextra -Werror -Wpedantic -ansi -pedantic-errors -Ofast
-CPPFLAGS = -MMD -D_FORTIFY_SOURCE=2 -iquote include
+CC ?= gcc
+CFLAGS := -ansi -O2 -pedantic-errors -Wall -Werror -Wextra -Wpedantic -Wshadow $(CFLAGS)
+CPPFLAGS := -D_FORTIFY_SOURCE=2 -iquote include -MMD $(CPPFLAGS)
 ifeq ($(shell uname),Linux)
 	CPPFLAGS += -D_POSIX_C_SOURCE=200112L
 endif
