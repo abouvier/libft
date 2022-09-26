@@ -14,10 +14,12 @@
 
 static char	sanitize(char c)
 {
-	return (ft_isprint(c) ? c : '?');
+	if (ft_isprint(c))
+		return (c);
+	return ('?');
 }
 
-char		*ft_sanitize(const char *s)
+char	*ft_sanitize(const char *s)
 {
 	return (ft_strmap(s, sanitize));
 }

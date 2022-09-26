@@ -22,7 +22,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *))
 		lst = lst->next;
 	while (lst)
 	{
-		if (!(elem = f(lst)))
+		elem = f(lst);
+		if (!elem)
 			return (map);
 		ft_lstadd(&map, elem);
 		lst = lst->prev;

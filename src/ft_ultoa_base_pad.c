@@ -17,7 +17,8 @@ char	*ft_ultoa_base_pad(unsigned long n, int base, size_t pad_len)
 	char	*a;
 	char	*tmp;
 
-	if ((a = ft_ultoa_base(n, base)))
+	a = ft_ultoa_base(n, base);
+	if (a)
 	{
 		tmp = ft_strpad(a, pad_len, '0', left);
 		ft_strdel(&a);

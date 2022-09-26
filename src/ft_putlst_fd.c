@@ -16,7 +16,8 @@ void	ft_putlst_fd(const t_list *lst, int fd)
 {
 	char	*s;
 
-	if ((s = ft_lststr(lst)))
+	s = ft_lststr(lst);
+	if (s)
 		ft_putstr_fd(s, fd);
 	ft_strdel(&s);
 }

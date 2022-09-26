@@ -14,7 +14,8 @@
 
 void	ft_putstr_pad(char const *s, size_t pad_len, t_dir dir)
 {
-	if ((s = ft_strpad(s, pad_len, ' ', dir)))
+	s = ft_strpad(s, pad_len, ' ', dir);
+	if (s)
 		ft_putstr(s);
 	ft_strdel((char **)&s);
 }

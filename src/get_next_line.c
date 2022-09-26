@@ -16,11 +16,9 @@
 #include <sys/uio.h>
 #include <unistd.h>
 
-static int	reset_buf(t_buffer *buf, char **junk)
+static int	reset_buf(t_buffer *buf)
 {
 	ft_lstdel(&buf->chunks, ft_lstfree);
-	if (junk)
-		ft_strdel(junk);
 	buf->size = 0;
 	return (-1);
 }
@@ -32,8 +30,9 @@ static void	build_line(t_buffer *buf, char *line)
 	while (buf->chunks)
 	{
 		next = buf->chunks->next;
-		buf->size -= buf->CHUNK_SIZE;
-		ft_memcpy(line + buf->size, buf->CHUNK, buf->CHUNK_SIZE);
+		buf->size -= buf->chunks->content_size;
+		ft_memcpy(line + buf->size, buf->chunks->content,
+			buf->chunks->content_size);
 		ft_lstdelone(&buf->chunks, ft_lstfree);
 		buf->chunks = next;
 	}
@@ -41,53 +40,53 @@ static void	build_line(t_buffer *buf, char *line)
 
 static int	set_next_line(t_buffer *buf, char *newline, char **line)
 {
-	char	*s;
-	t_list	*chunk;
+	char	s[BUF_SIZE];
 	size_t	new_size;
 
 	if (newline)
 	{
-		new_size = buf->CHUNK_SIZE - (newline - (char *)buf->CHUNK) - 1;
-		if (!(s = ft_strnew(new_size - 1)))
-			return (reset_buf(buf, NULL));
+		new_size = buf->chunks->content_size
+			- (newline - (char *)buf->chunks->content) - 1;
 		ft_memcpy(s, newline + 1, new_size);
-		buf->CHUNK_SIZE -= new_size + 1;
+		buf->chunks->content_size -= new_size + 1;
 		buf->size -= new_size + 1;
 	}
-	if (!(*line = ft_strnew(buf->size)))
-		return (reset_buf(buf, &s));
+	*line = ft_strnew(buf->size);
+	if (!*line)
+		return (reset_buf(buf));
 	build_line(buf, *line);
 	if (newline)
 	{
-		if (!(chunk = ft_lstnew_nocopy(s, new_size)))
-			return (reset_buf(buf, &s));
-		ft_lstadd(&buf->chunks, chunk);
+		if (!ft_lstadd_new(&buf->chunks, s, new_size))
+			return (reset_buf(buf));
 		buf->size = new_size;
 	}
 	return (1);
 }
 
-int			get_next_line(int const fd, char **line)
+int	get_next_line(int const fd, char **line)
 {
 	ssize_t			r;
 	char			*n;
-	char			*s;
+	char			s[BUF_SIZE];
 	static t_buffer	buf;
-	t_list			*chunk;
 
 	r = 42;
-	while (!buf.chunks
-		|| (!(n = ft_memchr(buf.CHUNK, '\n', buf.CHUNK_SIZE)) && r))
+	n = NULL;
+	if (buf.chunks)
+		n = ft_memchr(buf.chunks->content, '\n', buf.chunks->content_size);
+	while (!n && r)
 	{
-		if (!(s = ft_strnew(BUF_SIZE - 1))
-			|| (r = read(fd, s, BUF_SIZE)) < 0
-			|| !(chunk = ft_lstnew_nocopy(s, r)))
-			return (reset_buf(&buf, &s));
-		ft_lstadd(&buf.chunks, chunk);
+		r = read(fd, s, BUF_SIZE);
+		if (r < 0)
+			return (reset_buf(&buf));
+		if (!ft_lstadd_new(&buf.chunks, s, r))
+			return (reset_buf(&buf));
 		buf.size += r;
+		n = ft_memchr(buf.chunks->content, '\n', buf.chunks->content_size);
 	}
 	if (buf.size)
 		return (set_next_line(&buf, n, line));
-	reset_buf(&buf, NULL);
+	reset_buf(&buf);
 	return (0);
 }

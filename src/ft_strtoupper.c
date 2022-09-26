@@ -17,7 +17,7 @@ static void	strtoupper(char *s)
 	*s = ft_toupper(*s);
 }
 
-char		*ft_strtoupper(char *s)
+char	*ft_strtoupper(char *s)
 {
 	ft_striter(s, strtoupper);
 	return (s);

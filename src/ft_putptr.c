@@ -17,9 +17,11 @@ void	ft_putptr(unsigned long ptr)
 	char	*a;
 	char	*tmp;
 
-	if ((a = ft_ultoa_base(ptr, 16)))
+	a = ft_ultoa_base(ptr, 16);
+	if (a)
 	{
-		if ((tmp = ft_strjoin("0x", ft_strtoupper(a))))
+		tmp = ft_strjoin("0x", ft_strtoupper(a));
+		if (tmp)
 			ft_putstr(tmp);
 		ft_strdel(&tmp);
 	}

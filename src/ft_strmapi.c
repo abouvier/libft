@@ -18,7 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char			*p;
 	char			*mapi;
 
-	if ((mapi = ft_strdup(s)))
+	mapi = ft_strdup(s);
+	if (mapi)
 	{
 		i = 0;
 		p = mapi;

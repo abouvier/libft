@@ -16,7 +16,8 @@ char	*ft_strrepeat(char c, size_t len)
 {
 	char	*repeat;
 
-	if ((repeat = ft_strnew(len)))
+	repeat = ft_strnew(len);
+	if (repeat)
 		ft_memset(repeat, c, len);
 	return (repeat);
 }

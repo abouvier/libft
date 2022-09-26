@@ -13,75 +13,61 @@
 #ifndef LIBFT_CDEFS_H
 # define LIBFT_CDEFS_H
 
-# define M_PI_180			0.01745329251994329577
+# define M_PI_180				0.01745329251994329577
 
-# define PATH_STDPATH		"/usr/bin:/bin:/usr/sbin:/sbin"
-# define PATH_BSHELL		"/bin/sh"
-
-# define ABS(j)				((j) < 0 ? -(j) : (j))
-# define MIN(n, m)			((n) < (m) ? (n) : (m))
-# define MAX(n, m)			((n) > (m) ? (n) : (m))
-# define SQUARE(x)			((x) * (x))
-
-# define COMPLEX(z, re, im)	ft_complex_init(z, re, im)
-# define REAL(z, x)			COMPLEX(z, x, 0.0L)
-# define ZERO(z)			REAL(z, 0.0L)
+# define PATH_STDPATH			"/usr/bin:/bin:/usr/sbin:/sbin"
+# define PATH_BSHELL			"/bin/sh"
 
 # ifdef __linux__
 
-#  include <X11/X.h>
-#  include <X11/keysym.h>
+#  define MLX_KEY_PRESS			2
+#  define MLX_KEY_PRESS_MASK	1
+#  define MLX_KEY_RELEASE		3
+#  define MLX_KEY_RELEASE_MASK	2
 
-#  define MLX_KEY_PRESS			KeyPress
-#  define MLX_KEY_PRESS_MASK	KeyPressMask
-#  define MLX_KEY_RELEASE		KeyRelease
-#  define MLX_KEY_RELEASE_MASK	KeyReleaseMask
+#  define MLXK_ESCAPE			0xff1b
+#  define MLXK_UP				0xff52
+#  define MLXK_RIGHT			0xff53
+#  define MLXK_DOWN				0xff54
+#  define MLXK_LEFT				0xff51
+#  define MLXK_KP_ADD			0xffab
+#  define MLXK_KP_SUB			0xffad
+#  define MLXK_KP_0				0xff9e
+#  define MLXK_C				0x0063
+#  define MLXK_I				0x0069
+#  define MLXK_O				0x006f
+#  define MLXK_R				0x0072
+#  define MLXK_V				0x0076
 
-#  define MLXK_ESCAPE			XK_Escape
-#  define MLXK_UP				XK_Up
-#  define MLXK_RIGHT			XK_Right
-#  define MLXK_DOWN				XK_Down
-#  define MLXK_LEFT				XK_Left
-#  define MLXK_KP_ADD			XK_KP_Add
-#  define MLXK_KP_SUB			XK_KP_Subtract
-#  define MLXK_KP_0				XK_KP_Insert
-#  define MLXK_C				XK_c
-#  define MLXK_I				XK_i
-#  define MLXK_O				XK_o
-#  define MLXK_R				XK_r
-#  define MLXK_V				XK_v
+#  define MLX_MOUSE_MOVE		6
+#  define MLX_MOUSE_MOVE_MASK	64
 
-#  define MLX_MOUSE_MOVE		MotionNotify
-#  define MLX_MOUSE_MOVE_MASK	PointerMotionMask
-
-#  define MLXM_LEFT				Button1
-#  define MLXM_MIDDLE			Button2
-#  define MLXM_RIGHT			Button3
-#  define MLXM_WHEEL_UP			Button4
-#  define MLXM_WHEEL_DOWN		Button5
+#  define MLXM_LEFT				1
+#  define MLXM_MIDDLE			2
+#  define MLXM_RIGHT			3
+#  define MLXM_WHEEL_UP			4
+#  define MLXM_WHEEL_DOWN		5
 
 # else
-
-#  include <Carbon/Carbon.h>
 
 #  define MLX_KEY_PRESS			2
 #  define MLX_KEY_PRESS_MASK	0
 #  define MLX_KEY_RELEASE		3
 #  define MLX_KEY_RELEASE_MASK	0
 
-#  define MLXK_ESCAPE			kVK_Escape
-#  define MLXK_UP				kVK_UpArrow
-#  define MLXK_RIGHT			kVK_RightArrow
-#  define MLXK_DOWN				kVK_DownArrow
-#  define MLXK_LEFT				kVK_LeftArrow
-#  define MLXK_KP_ADD			kVK_ANSI_KeypadPlus
-#  define MLXK_KP_SUB			kVK_ANSI_KeypadMinus
-#  define MLXK_KP_0				kVK_ANSI_Keypad0
-#  define MLXK_C				kVK_ANSI_C
-#  define MLXK_I				kVK_ANSI_I
-#  define MLXK_O				kVK_ANSI_O
-#  define MLXK_R				kVK_ANSI_R
-#  define MLXK_V				kVK_ANSI_V
+#  define MLXK_ESCAPE			0x35
+#  define MLXK_UP				0x7E
+#  define MLXK_RIGHT			0x7C
+#  define MLXK_DOWN				0x7D
+#  define MLXK_LEFT				0x7B
+#  define MLXK_KP_ADD			0x45
+#  define MLXK_KP_SUB			0x4E
+#  define MLXK_KP_0				0x52
+#  define MLXK_C				0x08
+#  define MLXK_I				0x22
+#  define MLXK_O				0x1F
+#  define MLXK_R				0x0F
+#  define MLXK_V				0x09
 
 #  define MLX_MOUSE_MOVE		6
 #  define MLX_MOUSE_MOVE_MASK	0

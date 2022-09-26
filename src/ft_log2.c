@@ -17,7 +17,11 @@ int	ft_log2(unsigned int x)
 	if (!x)
 		return (-1);
 	log = 0;
-	while (x >>= 1)
+	x >>= 1;
+	while (x)
+	{
 		log++;
+		x >>= 1;
+	}
 	return (log);
 }

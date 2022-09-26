@@ -17,7 +17,10 @@ int	ft_putenv(char *string)
 	int		status;
 	char	*equals;
 
-	if (!string || !*string || !(equals = ft_strchr(string, '=')))
+	if (!string || !*string)
+		return (-1);
+	equals = ft_strchr(string, '=');
+	if (!equals)
 		return (-1);
 	*equals = '\0';
 	status = ft_setenv(string, equals + 1, 1);

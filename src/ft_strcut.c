@@ -21,8 +21,9 @@ char	*ft_strcut(const char *s, size_t start, size_t n)
 	len = ft_strlen(s);
 	if (start >= len)
 		n = 0;
-	if ((cut = malloc(len - MIN(n, len - start) + 1)))
-		ft_strcpy((char *)ft_memcpy(cut, s, MIN(start, len)) + MIN(start, len),
-			s + MIN(start + n, len));
+	cut = malloc(len - ft_ulmin(n, len - start) + 1);
+	if (cut)
+		ft_strcpy((char *)ft_memcpy(cut, s, ft_ulmin(start, len))
+			+ ft_ulmin(start, len), s + ft_ulmin(start + n, len));
 	return (cut);
 }

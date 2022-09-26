@@ -16,7 +16,8 @@ void	ft_putnbr_fd(int n, int fd)
 {
 	char	*a;
 
-	if ((a = ft_itoa(n)))
+	a = ft_itoa(n);
+	if (a)
 		ft_putstr_fd(a, fd);
 	ft_strdel(&a);
 }

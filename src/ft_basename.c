@@ -22,9 +22,13 @@ char	*ft_basename(char *path)
 	len = ft_strlen(path);
 	while (len-- && path[len] == '/')
 		path[len] = '\0';
-	if (!*path)
+	if (*path)
+	{
+		name = ft_strrchr(path, '/');
+		if (name)
+			path = name + 1;
+	}
+	else
 		*path = '/';
-	else if ((name = ft_strrchr(path, '/')))
-		path = name + 1;
 	return (path);
 }

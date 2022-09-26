@@ -14,14 +14,15 @@
 
 char	*ft_ultoa_base(unsigned long n, unsigned int base)
 {
-	char		*a;
-	size_t		len;
-	static char	s[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	char				*a;
+	size_t				len;
+	static const char	s[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 	if (base < 2 || base > 36)
 		return (NULL);
 	len = ft_ulnbrlen_base(n, base);
-	if ((a = ft_strnew(len)))
+	a = ft_strnew(len);
+	if (a)
 	{
 		while (len--)
 		{

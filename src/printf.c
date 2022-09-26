@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
 
 char	*printf_char(va_list *ap)
@@ -32,7 +31,8 @@ char	*printf_string(va_list *ap)
 {
 	char	*s;
 
-	if (!(s = va_arg(*ap, char *)))
+	s = va_arg(*ap, char *);
+	if (!s)
 		s = "(null)";
 	return (ft_strdup(s));
 }

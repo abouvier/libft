@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include <string.h>
 
 size_t	ft_nbrlen_base(int n, int base)
 {
@@ -18,7 +18,7 @@ size_t	ft_nbrlen_base(int n, int base)
 
 	if (base < 2 || base > 36)
 		return (0);
-	len = (n < 0 ? 2 : 1);
+	len = 1 + (n < 0);
 	while (n <= -base || n >= base)
 	{
 		n /= base;

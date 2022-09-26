@@ -17,9 +17,11 @@ void	ft_putnbr_pad(int n, size_t pad_len, char pad_char, t_dir dir)
 	char	*s;
 	char	*tmp;
 
-	if ((tmp = ft_itoa(n)))
+	tmp = ft_itoa(n);
+	if (tmp)
 	{
-		if ((s = ft_strpad(tmp, pad_len, pad_char, dir)))
+		s = ft_strpad(tmp, pad_len, pad_char, dir);
+		if (s)
 			ft_putstr(s);
 		ft_strdel(&s);
 	}

@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_image_pixel_get.c                               :+:      :+:    :+:   */
+/*   ft_fmin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 16:22:46 by abouvier          #+#    #+#             */
-/*   Updated: 2014/03/21 15:48:01 by abouvier         ###   ########.fr       */
+/*   Created: 2013/11/19 12:42:08 by abouvier          #+#    #+#             */
+/*   Updated: 2013/11/21 15:27:22 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_types.h"
-
-unsigned int	ft_image_pixel_get(const t_img *img, int x, int y)
+double	ft_fmin(double x, double y)
 {
-	return (*(unsigned int *)(img->data + y * img->size_line
-		+ x * img->bytes_per_pixel));
+	if (x < y)
+		return (x);
+	return (y);
 }

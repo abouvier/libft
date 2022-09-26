@@ -18,7 +18,8 @@ void	*ft_lsttbl(const t_list *lst)
 	void	**tbl;
 
 	size = ft_lstsize(lst);
-	if ((tbl = ft_calloc(size + 1, sizeof(*tbl))))
+	tbl = ft_calloc(size + 1, sizeof(*tbl));
+	if (tbl)
 	{
 		while (lst)
 		{

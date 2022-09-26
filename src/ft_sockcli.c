@@ -20,7 +20,8 @@ int	ft_sockcli(const struct addrinfo *ai)
 
 	while (ai)
 	{
-		if ((fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol)) > -1)
+		fd = socket(ai->ai_family, ai->ai_socktype, ai->ai_protocol);
+		if (fd > -1)
 		{
 			if (!connect(fd, ai->ai_addr, ai->ai_addrlen))
 				return (fd);

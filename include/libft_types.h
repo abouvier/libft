@@ -17,11 +17,14 @@
 # include <string.h>
 # include <dirent.h>
 
+typedef unsigned int	t_uint;
+typedef unsigned long	t_ulong;
+
 typedef int				(*t_cmp)(const void *, const void *);
 typedef void			(*t_del)(void *, size_t);
 typedef int				(*t_filter)(const struct dirent *);
 
-typedef struct			s_list
+typedef struct s_list
 {
 	void				*content;
 	size_t				content_size;
@@ -29,19 +32,19 @@ typedef struct			s_list
 	struct s_list		*prev;
 }						t_list;
 
-typedef enum			e_dir
+typedef enum e_dir
 {
 	left,
 	right
 }						t_dir;
 
-typedef enum			e_endian
+typedef enum e_endian
 {
 	little,
 	big
 }						t_endian;
 
-typedef struct			s_img
+typedef struct s_img
 {
 	void				*mlx;
 	void				*ptr;
@@ -53,7 +56,7 @@ typedef struct			s_img
 	t_endian			endian;
 }						t_img;
 
-typedef struct			s_complex
+typedef struct s_complex
 {
 	long double			re;
 	long double			im;

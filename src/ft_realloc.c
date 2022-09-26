@@ -20,9 +20,10 @@ void	*ft_realloc(void *ptr, size_t size, size_t new_size)
 	p = ptr;
 	if (size == new_size)
 		return (*p);
-	if ((new_ptr = ft_memalloc(new_size)))
+	new_ptr = ft_memalloc(new_size);
+	if (new_ptr)
 	{
-		ft_memcpy(new_ptr, *p, MIN(size, new_size));
+		ft_memcpy(new_ptr, *p, ft_ulmin(size, new_size));
 		ft_memdel(p);
 	}
 	return (new_ptr);

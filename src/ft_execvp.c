@@ -21,18 +21,19 @@ int	ft_execvp(const char *file, char *const *argv)
 
 	if (!ft_strchr(file, '/'))
 	{
-		if (!(path = ft_getenv("PATH")))
+		path = ft_getenv("PATH");
+		if (!path)
 			path = PATH_STDPATH;
-		if (!(paths = ft_strsplit(path, ':')))
+		paths = ft_strsplit(path, ':');
+		if (!paths)
 			return (-1);
-		i = 0;
-		path = NULL;
-		while (paths[i])
+		i = -1;
+		while (paths[++i])
 		{
-			if ((path = ft_pathjoin(paths[i], file)))
+			path = ft_pathjoin(paths[i], file);
+			if (path)
 				execve(path, argv, g_environ);
 			ft_strdel(&path);
-			i++;
 		}
 		ft_strdeldel(&paths);
 	}

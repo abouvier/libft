@@ -14,8 +14,5 @@
 
 size_t	ft_strnlen(const char *s, size_t maxlen)
 {
-	size_t	len;
-
-	len = ft_strlen(s);
-	return (len < maxlen ? len : maxlen);
+	return (ft_ulmin(ft_strlen(s), maxlen));
 }

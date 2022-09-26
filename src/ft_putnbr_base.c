@@ -16,7 +16,8 @@ void	ft_putnbr_base(int n, int base)
 {
 	char	*a;
 
-	if ((a = ft_itoa_base(n, base)))
+	a = ft_itoa_base(n, base);
+	if (a)
 		ft_putstr(a);
 	ft_strdel(&a);
 }

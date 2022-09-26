@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "libft_types.h"
 #include <mlx.h>
 
 unsigned int	ft_image_color(const t_img *img, int color)

@@ -16,7 +16,8 @@ void	ft_putptr_pad(unsigned long ptr, size_t pad_len)
 {
 	char	*a;
 
-	if ((a = ft_ultoa_base_pad(ptr, 16, pad_len)))
+	a = ft_ultoa_base_pad(ptr, 16, pad_len);
+	if (a)
 		ft_putstr(a);
 	ft_strdel(&a);
 }

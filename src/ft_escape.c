@@ -19,7 +19,8 @@ char	*ft_escape(const char *s)
 	char	*esc;
 
 	len = ft_strlen(s) + 2;
-	if (!(esc = ft_strnew(len)))
+	esc = ft_strnew(len);
+	if (!esc)
 		return (NULL);
 	i = 1;
 	*esc = '\'';

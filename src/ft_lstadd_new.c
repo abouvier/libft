@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_image_pixel_get.c                               :+:      :+:    :+:   */
+/*   ft_lstadd_new.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abouvier <abouvier@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/21 16:22:46 by abouvier          #+#    #+#             */
-/*   Updated: 2014/03/21 15:48:01 by abouvier         ###   ########.fr       */
+/*   Created: 2013/11/25 10:32:47 by abouvier          #+#    #+#             */
+/*   Updated: 2017/08/07 07:18:24 by abouvier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_types.h"
+#include "libft.h"
 
-unsigned int	ft_image_pixel_get(const t_img *img, int x, int y)
+t_list	*ft_lstadd_new(t_list **alst, void const *content, size_t content_size)
 {
-	return (*(unsigned int *)(img->data + y * img->size_line
-		+ x * img->bytes_per_pixel));
+	t_list	*new;
+
+	new = ft_lstnew(content, content_size);
+	if (new)
+		ft_lstadd(alst, new);
+	return (new);
 }

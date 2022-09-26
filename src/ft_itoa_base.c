@@ -14,16 +14,17 @@
 
 char	*ft_itoa_base(int n, int base)
 {
-	int			m;
-	char		*a;
-	size_t		len;
-	static char	s[] = "0123456789abcdefghijklmnopqrstuvwxyz";
+	int					m;
+	char				*a;
+	size_t				len;
+	static const char	s[] = "0123456789abcdefghijklmnopqrstuvwxyz";
 
 	if (base < 2 || base > 36)
 		return (NULL);
 	m = n;
 	len = ft_nbrlen_base(n, base);
-	if ((a = ft_strnew(len)))
+	a = ft_strnew(len);
+	if (a)
 	{
 		while (len--)
 		{

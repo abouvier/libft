@@ -15,7 +15,7 @@
 
 # include <stdarg.h>
 
-typedef struct	s_printf
+typedef struct s_printf
 {
 	char		specifier;
 	char		*(*arg)(va_list *);

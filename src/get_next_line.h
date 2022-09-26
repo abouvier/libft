@@ -17,13 +17,10 @@
 
 # define BUF_SIZE	1024
 
-typedef struct		s_buffer
+typedef struct s_buffer
 {
 	size_t			size;
 	t_list			*chunks;
 }					t_buffer;
-
-# define CHUNK		chunks->content
-# define CHUNK_SIZE	chunks->content_size
 
 #endif

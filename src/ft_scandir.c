@@ -20,16 +20,20 @@ int	ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
 	DIR				*dirp;
 	struct dirent	*entry;
 
-	if (!(dirp = opendir(dirname)))
+	dirp = opendir(dirname);
+	if (!dirp)
 		return (-1);
 	size = 0;
 	*namelist = NULL;
-	while ((entry = readdir(dirp)))
+	entry = readdir(dirp);
+	while (entry)
 	{
-		if (filter && !filter(entry))
-			continue ;
-		ft_lstadd(namelist, ft_lstnew(entry, entry->d_reclen));
-		size++;
+		if (!filter || filter(entry))
+		{
+			if (ft_lstadd_new(namelist, entry, entry->d_reclen))
+				size++;
+		}
+		entry = readdir(dirp);
 	}
 	closedir(dirp);
 	if (compar && size > 1)

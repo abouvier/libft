@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_types.h"
+#include "libft.h"
 
 t_complex	*ft_complex_div(t_complex *z, const t_complex *w)
 {
@@ -18,7 +18,7 @@ t_complex	*ft_complex_div(t_complex *z, const t_complex *w)
 	long double	re;
 
 	re = z->re;
-	d = SQUARE(w->re) + SQUARE(w->im);
+	d = ft_fsquarel(w->re) + ft_fsquarel(w->im);
 	z->re = (z->re * w->re + z->im * w->im) / d;
 	z->im = (z->im * w->re - re * w->im) / d;
 	return (z);

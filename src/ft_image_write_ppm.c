@@ -22,9 +22,12 @@ void	ft_image_write_ppm(const char *ppm, const t_img *img)
 	int		size;
 	char	*data;
 
+	fd = open(ppm, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+	if (fd == -1)
+		return ;
 	size = img->width * img->height;
-	if ((fd = open(ppm, O_WRONLY | O_CREAT | O_TRUNC, 0644)) != -1
-		&& (data = malloc(3 * size)))
+	data = malloc(3 * size);
+	if (data)
 	{
 		i = 0;
 		ft_dprintf(fd, "P6\n%d %d\n255\n", img->width, img->height);
@@ -35,7 +38,7 @@ void	ft_image_write_ppm(const char *ppm, const t_img *img)
 			data[i * 3 + 2] = img->data[i * 4];
 			i++;
 		}
-		i = write(fd, data, 3 * size);
+		(void)(write(fd, data, 3 * size) + 1);
 		free(data);
 	}
 	close(fd);

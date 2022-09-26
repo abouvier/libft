@@ -19,7 +19,8 @@ char	*ft_lststr(const t_list *lst)
 	size_t	len;
 
 	len = ft_lstlen(lst);
-	if ((s = malloc(len + 1)))
+	s = malloc(len + 1);
+	if (s)
 	{
 		s[len] = '\0';
 		while (lst)

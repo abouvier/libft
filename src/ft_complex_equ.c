@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft_types.h"
+#include "libft.h"
 
 int	ft_complex_equ(const t_complex *z, const t_complex *w)
 {
-	return (SQUARE(z->re - w->re) + SQUARE(z->im - w->im) < 0.01L);
+	return (ft_fsquarel(z->re - w->re) + ft_fsquarel(z->im - w->im) < 0.01L);
 }

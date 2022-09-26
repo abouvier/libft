@@ -133,8 +133,8 @@ char		*ft_strcut(const char *s, size_t start, size_t n);
 t_list		*ft_lstlast(const t_list *lst);
 t_img		*ft_image_create(void *mlx, int width, int height);
 void		ft_image_pixel_put(t_img *img, int x, int y, unsigned int color);
-unsigned	ft_image_pixel_get(const t_img *img, int x, int y);
-unsigned	ft_image_color(const t_img *img, int color);
+t_uint		ft_image_pixel_get(const t_img *img, int x, int y);
+t_uint		ft_image_color(const t_img *img, int color);
 t_img		*ft_image_create_xpm(void *mlx, const char *xpm);
 void		ft_image_write_ppm(const char *ppm, const t_img *img);
 void		ft_image_destroy(t_img **img);
@@ -163,7 +163,7 @@ size_t		ft_tblsize(const void *atbl);
 int			ft_log2(unsigned int x);
 void		ft_image_clear(t_img *img);
 int			ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
-	int (*compar)(const struct dirent **, const struct dirent **));
+				int (*compar)(const struct dirent **, const struct dirent **));
 int			get_next_line(int const fd, char **line);
 int			ft_fsgnl(long double x);
 void		ft_lstfree(void *content, size_t content_size);
@@ -191,5 +191,10 @@ int			ft_vasprintf(char **strp, const char *format, va_list ap);
 int			ft_asprintf(char **strp, const char *format, ...);
 t_complex	*ft_complex_init(t_complex *z, long double re, long double im);
 t_list		*ft_lstnew_nocopy(void const *content, size_t content_size);
+t_ulong		ft_ulmin(unsigned long n, unsigned long m);
+long double	ft_fsquarel(long double x);
+t_list		*ft_lstadd_new(t_list **alst, void const *content,
+				size_t content_size);
+double		ft_fmin(double x, double y);
 
 #endif
