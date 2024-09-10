@@ -12,8 +12,8 @@
 
 NAME = libft.a
 CC ?= gcc
-CFLAGS := -ansi -O2 -pedantic-errors -Wall -Werror -Wextra -Wpedantic -Wshadow $(CFLAGS)
-CPPFLAGS := -D_FORTIFY_SOURCE=2 -iquote include -MMD $(CPPFLAGS)
+CFLAGS += -ansi -pedantic-errors -Wall -Werror -Wextra -Wpedantic -Wshadow
+CPPFLAGS += -iquote include -MMD
 ifeq ($(shell uname),Linux)
 	CPPFLAGS += -D_POSIX_C_SOURCE=200112L
 endif
@@ -49,8 +49,8 @@ SRCS = ft_abs.c \
 	ft_getenv.c \
 	ft_image_clear.c \
 	ft_image_color.c \
-	ft_image_create.c \
 	ft_image_create_xpm.c \
+	ft_image_create.c \
 	ft_image_destroy.c \
 	ft_image_pixel_get.c \
 	ft_image_pixel_put.c \
@@ -70,8 +70,8 @@ SRCS = ft_abs.c \
 	ft_kthxbye.c \
 	ft_log2.c \
 	ft_lstadd_back.c \
-	ft_lstadd.c \
 	ft_lstadd_new.c \
+	ft_lstadd.c \
 	ft_lstdel.c \
 	ft_lstdelif.c \
 	ft_lstdelone.c \
@@ -80,8 +80,8 @@ SRCS = ft_abs.c \
 	ft_lstlast.c \
 	ft_lstlen.c \
 	ft_lstmap.c \
-	ft_lstnew.c \
 	ft_lstnew_nocopy.c \
+	ft_lstnew.c \
 	ft_lstsize.c \
 	ft_lstsort.c \
 	ft_lststr.c \
@@ -102,21 +102,21 @@ SRCS = ft_abs.c \
 	ft_nbrlen.c \
 	ft_pathjoin.c \
 	ft_printf.c \
-	ft_putchar.c \
 	ft_putchar_fd.c \
-	ft_putendl.c \
+	ft_putchar.c \
 	ft_putendl_fd.c \
+	ft_putendl.c \
 	ft_putenv.c \
 	ft_putlst_fd.c \
 	ft_putnbr_base.c \
-	ft_putnbr.c \
 	ft_putnbr_fd.c \
 	ft_putnbr_pad.c \
-	ft_putptr.c \
+	ft_putnbr.c \
 	ft_putptr_pad.c \
-	ft_putstr.c \
+	ft_putptr.c \
 	ft_putstr_fd.c \
 	ft_putstr_pad.c \
+	ft_putstr.c \
 	ft_qsort.c \
 	ft_realloc.c \
 	ft_sanitize.c \
@@ -159,6 +159,7 @@ SRCS = ft_abs.c \
 	ft_strsplit.c \
 	ft_strsplitsplit.c \
 	ft_strstr.c \
+	ft_strstrdel.c \
 	ft_strsub.c \
 	ft_strtoupper.c \
 	ft_strtrim.c \
@@ -167,8 +168,8 @@ SRCS = ft_abs.c \
 	ft_toupper.c \
 	ft_ulmin.c \
 	ft_ulnbrlen_base.c \
-	ft_ultoa_base.c \
 	ft_ultoa_base_pad.c \
+	ft_ultoa_base.c \
 	ft_ultoa.c \
 	ft_unsetenv.c \
 	ft_vasprintf.c \
