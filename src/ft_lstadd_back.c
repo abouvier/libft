@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {

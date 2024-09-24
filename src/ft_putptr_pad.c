@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 void	ft_putptr_pad(unsigned long ptr, size_t pad_len)
 {

@@ -10,8 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
 #include "libft.h"
+#include "libft_types.h"
+#include "printf.h"
+#include <stdarg.h>
+#include <string.h>
 
 static char	*printf_arg(char specifier, va_list *ap)
 {

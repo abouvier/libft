@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 char	*ft_ultoa_base(unsigned long n, unsigned int base)
 {

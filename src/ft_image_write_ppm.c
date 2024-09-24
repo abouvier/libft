@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 #include <fcntl.h>
 #include <stdlib.h>
 #include <unistd.h>

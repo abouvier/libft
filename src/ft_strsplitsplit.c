@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 static void	*kthxbye(t_list **word)
 {

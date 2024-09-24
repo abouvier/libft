@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 void	ft_lstsort(t_list *lst, t_cmp cmp)
 {

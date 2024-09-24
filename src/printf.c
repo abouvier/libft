@@ -10,7 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "printf.h"
+
 #include "libft.h"
+#include <stdarg.h>
 
 char	*printf_char(va_list *ap)
 {

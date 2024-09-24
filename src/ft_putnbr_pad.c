@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 void	ft_putnbr_pad(int n, size_t pad_len, char pad_char, t_dir dir)
 {

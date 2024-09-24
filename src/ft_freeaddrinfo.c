@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <sys/socket.h>
+#include "libft.h"
 #include <netdb.h>
 #include <stdlib.h>
 

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 
 t_complex	*ft_complex_pow(t_complex *w, const t_complex *z)
 {

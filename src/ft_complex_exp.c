@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 #include <math.h>
 
 t_complex	*ft_complex_exp(t_complex *z)

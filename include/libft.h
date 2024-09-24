@@ -14,8 +14,11 @@
 # define LIBFT_H
 
 # include "libft_types.h"
-# include <stdarg.h>
+# include <dirent.h>
 # include <netdb.h>
+# include <stdarg.h>
+# include <stdint.h>
+# include <string.h>
 
 /*
 ** Part 1

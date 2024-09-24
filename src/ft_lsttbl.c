@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 void	*ft_lsttbl(const t_list *lst)
 {

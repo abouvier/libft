@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 
 t_complex	*ft_complex_sqrt(t_complex *z)
 {

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 #include <mlx.h>
 
 void	ft_image_destroy(t_img **img)

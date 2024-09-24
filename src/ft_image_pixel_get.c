@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include "libft_types.h"
 
 unsigned int	ft_image_pixel_get(const t_img *img, int x, int y)

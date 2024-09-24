@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <dirent.h>
 
 int	ft_alphasort(const struct dirent **a, const struct dirent **b)
 {

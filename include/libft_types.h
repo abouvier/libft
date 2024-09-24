@@ -13,8 +13,8 @@
 #ifndef LIBFT_TYPES_H
 # define LIBFT_TYPES_H
 
-# include "libft_cdefs.h"
 # include <string.h>
+
 # include <dirent.h>
 
 typedef unsigned int	t_uint;

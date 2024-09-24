@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 
 void	ft_putlst_fd(const t_list *lst, int fd)
 {

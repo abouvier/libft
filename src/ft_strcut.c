@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include <stdlib.h>
+#include <string.h>
 
 char	*ft_strcut(const char *s, size_t start, size_t n)
 {

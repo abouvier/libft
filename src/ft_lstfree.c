@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
+#include <string.h>
 
 void	ft_lstfree(void *content, size_t content_size)
 {

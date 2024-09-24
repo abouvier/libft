@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 
 void	ft_lstdelif(t_list **alst, void *content, t_cmp cmp, t_del del)
 {

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdarg.h>
 #include <stdlib.h>
 
 int	ft_vdprintf(int fd, const char *format, va_list ap)

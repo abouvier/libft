@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 #include <mlx.h>
 
 t_img	*ft_image_create(void *mlx, int width, int height)

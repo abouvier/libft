@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 
 void	ft_image_pixel_put(t_img *img, int x, int y, unsigned int color)
 {

@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 void	ft_qsort(void *base, size_t nmemb, size_t size, t_cmp compar)
 {

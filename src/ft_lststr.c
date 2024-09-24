@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 #include <stdlib.h>
+#include <string.h>
 
 char	*ft_lststr(const t_list *lst)
 {

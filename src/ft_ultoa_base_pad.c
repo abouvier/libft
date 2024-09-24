@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 char	*ft_ultoa_base_pad(unsigned long n, int base, size_t pad_len)
 {

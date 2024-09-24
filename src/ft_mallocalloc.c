@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 void	*ft_mallocalloc(size_t c1, size_t s1, size_t c2, size_t s2)
 {

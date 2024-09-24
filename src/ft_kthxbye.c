@@ -10,8 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 #include <stdio.h>
+#include <stdlib.h>
 
 void	ft_kthxbye(const char *s)
 {

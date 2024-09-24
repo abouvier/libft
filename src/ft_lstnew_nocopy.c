@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 t_list	*ft_lstnew_nocopy(void const *content, size_t content_size)
 {

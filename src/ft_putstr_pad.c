@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 
 void	ft_putstr_pad(char const *s, size_t pad_len, t_dir dir)
 {

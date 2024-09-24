@@ -11,9 +11,11 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+
 #include "libft.h"
+#include "libft_types.h"
+#include <string.h>
 #include <sys/types.h>
-#include <sys/uio.h>
 #include <unistd.h>
 
 static int	reset_buf(t_buffer *buf)

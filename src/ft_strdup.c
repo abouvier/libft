@@ -12,6 +12,7 @@
 
 #include "libft.h"
 #include <stdlib.h>
+#include <string.h>
 
 char	*ft_strdup(const char *s)
 {

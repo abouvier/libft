@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_types.h"
 #include <math.h>
 
 t_complex	*ft_complex_log(t_complex *z)

@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 long double	ft_fsquarel(long double x)
 {
 	return (x * x);

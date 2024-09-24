@@ -11,7 +11,9 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include "libft_types.h"
+#include <dirent.h>
+#include <string.h>
 
 int	ft_scandir(const char *dirname, t_list **namelist, t_filter filter,
 	int (*compar)(const struct dirent **, const struct dirent **))
